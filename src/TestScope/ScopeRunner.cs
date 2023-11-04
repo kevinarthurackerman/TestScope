@@ -75,12 +75,12 @@ public sealed class ConfiguredScopeRunner
     /// </summary>
     public async ValueTask RunAsync(CancellationToken cancellationToken = default)
     {
-        using var scope = _serviceProvider.CreateScope();
-        
         var context = new ExpandoObject();
 
         foreach (var scopedAction in _scopedActions)
         {
+            using var scope = _serviceProvider.CreateScope();
+
             NextAsync executeRun = () => scopedAction(scope.ServiceProvider, context, cancellationToken);
 
             foreach (var pipelineBehavior in _pipelineBehaviors.Reverse())
