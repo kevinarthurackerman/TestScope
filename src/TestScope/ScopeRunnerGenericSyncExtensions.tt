@@ -1,0 +1,63 @@
+<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ output extension=".cs" #>
+<#
+    var maxServices = 32;
+#>
+namespace TestScope;
+
+public static partial class ScopeRunnerExtensions
+{
+<# for (var i = 1; i <= maxServices; i++)
+{
+  var csvServiceList = String.Join(", ", Enumerable.Range(1,i).Select(x => $"TArg{x}"));
+  var args = String.Join(", ", Enumerable.Range(1,i).Select(x => $"arg{x}"));
+#>
+    /// <inheritdoc cref="ScopeRunner.ForEachScope" />
+    public static ScopeRunner ForEachScope<<#= csvServiceList #>>(this ScopeRunner scopeRunner, DIPipelineBehavior<<#= csvServiceList #>> behavior)
+        => scopeRunner.ForEachScope((serviceProvider, next) =>
+        {
+<# for (var j = 1; j <= i; j++) { #>
+            var arg<#= j #> = ArgumentLocator<TArg<#= j #>>.Get(serviceProvider);
+<# } #>
+
+            behavior(<#= args #>, next);
+        });
+
+<# } #>
+<# for (var i = 1; i <= maxServices; i++)
+{
+  var csvServiceList = String.Join(", ", Enumerable.Range(1,i).Select(x => $"TArg{x}"));
+  var args = String.Join(", ", Enumerable.Range(1,i).Select(x => $"arg{x}"));
+#>
+    /// <inheritdoc cref="ScopeRunner.ExecuteScope" />
+    public static ConfiguredScopeRunner ExecuteScope<<#= csvServiceList #>>(this ScopeRunner scopeRunner, DIExecuteScope<<#= csvServiceList #>> scopedAction)
+        => scopeRunner.ExecuteScope((serviceProvider, context) =>
+        {
+<# for (var j = 1; j <= i; j++) { #>
+            var arg<#= j #> = ArgumentLocator<TArg<#= j #>>.GetWithContext(serviceProvider, context);
+<# } #>
+
+            scopedAction(<#= args #>);
+        });
+
+<# } #>
+<# for (var i = 1; i <= maxServices; i++)
+{
+  var csvServiceList = String.Join(", ", Enumerable.Range(1,i).Select(x => $"TArg{x}"));
+  var args = String.Join(", ", Enumerable.Range(1,i).Select(x => $"arg{x}"));
+#>
+    /// <inheritdoc cref="ConfiguredScopeRunner.ThenExecuteScope" />
+    public static ConfiguredScopeRunner ThenExecuteScope<<#= csvServiceList #>>(this ConfiguredScopeRunner scopeRunner, DIExecuteScope<<#= csvServiceList #>> scopedAction)
+        => scopeRunner.ThenExecuteScope((serviceProvider, context) =>
+        {
+<# for (var j = 1; j <= i; j++) { #>
+            var arg<#= j #> = ArgumentLocator<TArg<#= j #>>.GetWithContext(serviceProvider, context);
+<# } #>
+
+            scopedAction(<#= args #>);
+        });
+
+<# } #>
+}
