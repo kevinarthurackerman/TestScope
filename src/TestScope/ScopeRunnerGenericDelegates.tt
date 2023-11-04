@@ -5,8 +5,6 @@
 <#
     var maxServices = 32;
 #>
-using System.Threading.Tasks;
-
 namespace TestScope;
 
 <# for (var i = 1; i <= maxServices; i++)

@@ -4,6 +4,7 @@ public static partial class ScopeRunnerExtensions
 {
     /// <inheritdoc cref="ScopeRunner.ForEachScope" />
     public static ScopeRunner ForEachScope<TArg1>(this ScopeRunner scopeRunner, DIPipelineBehaviorAsync<TArg1> behavior)
+        where TArg1 : notnull
         => scopeRunner.ForEachScope((serviceProvider, next, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithToken(serviceProvider, cancellationToken);
@@ -13,6 +14,8 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ScopeRunner.ForEachScope" />
     public static ScopeRunner ForEachScope<TArg1, TArg2>(this ScopeRunner scopeRunner, DIPipelineBehaviorAsync<TArg1, TArg2> behavior)
+        where TArg1 : notnull
+        where TArg2 : notnull
         => scopeRunner.ForEachScope((serviceProvider, next, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithToken(serviceProvider, cancellationToken);
@@ -23,6 +26,9 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ScopeRunner.ForEachScope" />
     public static ScopeRunner ForEachScope<TArg1, TArg2, TArg3>(this ScopeRunner scopeRunner, DIPipelineBehaviorAsync<TArg1, TArg2, TArg3> behavior)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
         => scopeRunner.ForEachScope((serviceProvider, next, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithToken(serviceProvider, cancellationToken);
@@ -34,6 +40,10 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ScopeRunner.ForEachScope" />
     public static ScopeRunner ForEachScope<TArg1, TArg2, TArg3, TArg4>(this ScopeRunner scopeRunner, DIPipelineBehaviorAsync<TArg1, TArg2, TArg3, TArg4> behavior)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
         => scopeRunner.ForEachScope((serviceProvider, next, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithToken(serviceProvider, cancellationToken);
@@ -46,6 +56,11 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ScopeRunner.ForEachScope" />
     public static ScopeRunner ForEachScope<TArg1, TArg2, TArg3, TArg4, TArg5>(this ScopeRunner scopeRunner, DIPipelineBehaviorAsync<TArg1, TArg2, TArg3, TArg4, TArg5> behavior)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
         => scopeRunner.ForEachScope((serviceProvider, next, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithToken(serviceProvider, cancellationToken);
@@ -59,6 +74,12 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ScopeRunner.ForEachScope" />
     public static ScopeRunner ForEachScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6>(this ScopeRunner scopeRunner, DIPipelineBehaviorAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6> behavior)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
         => scopeRunner.ForEachScope((serviceProvider, next, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithToken(serviceProvider, cancellationToken);
@@ -73,6 +94,13 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ScopeRunner.ForEachScope" />
     public static ScopeRunner ForEachScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7>(this ScopeRunner scopeRunner, DIPipelineBehaviorAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7> behavior)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
         => scopeRunner.ForEachScope((serviceProvider, next, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithToken(serviceProvider, cancellationToken);
@@ -88,6 +116,14 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ScopeRunner.ForEachScope" />
     public static ScopeRunner ForEachScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8>(this ScopeRunner scopeRunner, DIPipelineBehaviorAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8> behavior)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
+        where TArg8 : notnull
         => scopeRunner.ForEachScope((serviceProvider, next, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithToken(serviceProvider, cancellationToken);
@@ -104,6 +140,15 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ScopeRunner.ForEachScope" />
     public static ScopeRunner ForEachScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9>(this ScopeRunner scopeRunner, DIPipelineBehaviorAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9> behavior)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
+        where TArg8 : notnull
+        where TArg9 : notnull
         => scopeRunner.ForEachScope((serviceProvider, next, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithToken(serviceProvider, cancellationToken);
@@ -121,6 +166,16 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ScopeRunner.ForEachScope" />
     public static ScopeRunner ForEachScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10>(this ScopeRunner scopeRunner, DIPipelineBehaviorAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10> behavior)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
+        where TArg8 : notnull
+        where TArg9 : notnull
+        where TArg10 : notnull
         => scopeRunner.ForEachScope((serviceProvider, next, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithToken(serviceProvider, cancellationToken);
@@ -139,6 +194,17 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ScopeRunner.ForEachScope" />
     public static ScopeRunner ForEachScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11>(this ScopeRunner scopeRunner, DIPipelineBehaviorAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11> behavior)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
+        where TArg8 : notnull
+        where TArg9 : notnull
+        where TArg10 : notnull
+        where TArg11 : notnull
         => scopeRunner.ForEachScope((serviceProvider, next, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithToken(serviceProvider, cancellationToken);
@@ -158,6 +224,18 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ScopeRunner.ForEachScope" />
     public static ScopeRunner ForEachScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12>(this ScopeRunner scopeRunner, DIPipelineBehaviorAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12> behavior)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
+        where TArg8 : notnull
+        where TArg9 : notnull
+        where TArg10 : notnull
+        where TArg11 : notnull
+        where TArg12 : notnull
         => scopeRunner.ForEachScope((serviceProvider, next, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithToken(serviceProvider, cancellationToken);
@@ -178,6 +256,19 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ScopeRunner.ForEachScope" />
     public static ScopeRunner ForEachScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13>(this ScopeRunner scopeRunner, DIPipelineBehaviorAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13> behavior)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
+        where TArg8 : notnull
+        where TArg9 : notnull
+        where TArg10 : notnull
+        where TArg11 : notnull
+        where TArg12 : notnull
+        where TArg13 : notnull
         => scopeRunner.ForEachScope((serviceProvider, next, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithToken(serviceProvider, cancellationToken);
@@ -199,6 +290,20 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ScopeRunner.ForEachScope" />
     public static ScopeRunner ForEachScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14>(this ScopeRunner scopeRunner, DIPipelineBehaviorAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14> behavior)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
+        where TArg8 : notnull
+        where TArg9 : notnull
+        where TArg10 : notnull
+        where TArg11 : notnull
+        where TArg12 : notnull
+        where TArg13 : notnull
+        where TArg14 : notnull
         => scopeRunner.ForEachScope((serviceProvider, next, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithToken(serviceProvider, cancellationToken);
@@ -221,6 +326,21 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ScopeRunner.ForEachScope" />
     public static ScopeRunner ForEachScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15>(this ScopeRunner scopeRunner, DIPipelineBehaviorAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15> behavior)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
+        where TArg8 : notnull
+        where TArg9 : notnull
+        where TArg10 : notnull
+        where TArg11 : notnull
+        where TArg12 : notnull
+        where TArg13 : notnull
+        where TArg14 : notnull
+        where TArg15 : notnull
         => scopeRunner.ForEachScope((serviceProvider, next, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithToken(serviceProvider, cancellationToken);
@@ -244,6 +364,22 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ScopeRunner.ForEachScope" />
     public static ScopeRunner ForEachScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16>(this ScopeRunner scopeRunner, DIPipelineBehaviorAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16> behavior)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
+        where TArg8 : notnull
+        where TArg9 : notnull
+        where TArg10 : notnull
+        where TArg11 : notnull
+        where TArg12 : notnull
+        where TArg13 : notnull
+        where TArg14 : notnull
+        where TArg15 : notnull
+        where TArg16 : notnull
         => scopeRunner.ForEachScope((serviceProvider, next, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithToken(serviceProvider, cancellationToken);
@@ -268,6 +404,23 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ScopeRunner.ForEachScope" />
     public static ScopeRunner ForEachScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17>(this ScopeRunner scopeRunner, DIPipelineBehaviorAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17> behavior)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
+        where TArg8 : notnull
+        where TArg9 : notnull
+        where TArg10 : notnull
+        where TArg11 : notnull
+        where TArg12 : notnull
+        where TArg13 : notnull
+        where TArg14 : notnull
+        where TArg15 : notnull
+        where TArg16 : notnull
+        where TArg17 : notnull
         => scopeRunner.ForEachScope((serviceProvider, next, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithToken(serviceProvider, cancellationToken);
@@ -293,6 +446,24 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ScopeRunner.ForEachScope" />
     public static ScopeRunner ForEachScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18>(this ScopeRunner scopeRunner, DIPipelineBehaviorAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18> behavior)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
+        where TArg8 : notnull
+        where TArg9 : notnull
+        where TArg10 : notnull
+        where TArg11 : notnull
+        where TArg12 : notnull
+        where TArg13 : notnull
+        where TArg14 : notnull
+        where TArg15 : notnull
+        where TArg16 : notnull
+        where TArg17 : notnull
+        where TArg18 : notnull
         => scopeRunner.ForEachScope((serviceProvider, next, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithToken(serviceProvider, cancellationToken);
@@ -319,6 +490,25 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ScopeRunner.ForEachScope" />
     public static ScopeRunner ForEachScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19>(this ScopeRunner scopeRunner, DIPipelineBehaviorAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19> behavior)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
+        where TArg8 : notnull
+        where TArg9 : notnull
+        where TArg10 : notnull
+        where TArg11 : notnull
+        where TArg12 : notnull
+        where TArg13 : notnull
+        where TArg14 : notnull
+        where TArg15 : notnull
+        where TArg16 : notnull
+        where TArg17 : notnull
+        where TArg18 : notnull
+        where TArg19 : notnull
         => scopeRunner.ForEachScope((serviceProvider, next, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithToken(serviceProvider, cancellationToken);
@@ -346,6 +536,26 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ScopeRunner.ForEachScope" />
     public static ScopeRunner ForEachScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20>(this ScopeRunner scopeRunner, DIPipelineBehaviorAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20> behavior)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
+        where TArg8 : notnull
+        where TArg9 : notnull
+        where TArg10 : notnull
+        where TArg11 : notnull
+        where TArg12 : notnull
+        where TArg13 : notnull
+        where TArg14 : notnull
+        where TArg15 : notnull
+        where TArg16 : notnull
+        where TArg17 : notnull
+        where TArg18 : notnull
+        where TArg19 : notnull
+        where TArg20 : notnull
         => scopeRunner.ForEachScope((serviceProvider, next, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithToken(serviceProvider, cancellationToken);
@@ -374,6 +584,27 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ScopeRunner.ForEachScope" />
     public static ScopeRunner ForEachScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21>(this ScopeRunner scopeRunner, DIPipelineBehaviorAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21> behavior)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
+        where TArg8 : notnull
+        where TArg9 : notnull
+        where TArg10 : notnull
+        where TArg11 : notnull
+        where TArg12 : notnull
+        where TArg13 : notnull
+        where TArg14 : notnull
+        where TArg15 : notnull
+        where TArg16 : notnull
+        where TArg17 : notnull
+        where TArg18 : notnull
+        where TArg19 : notnull
+        where TArg20 : notnull
+        where TArg21 : notnull
         => scopeRunner.ForEachScope((serviceProvider, next, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithToken(serviceProvider, cancellationToken);
@@ -403,6 +634,28 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ScopeRunner.ForEachScope" />
     public static ScopeRunner ForEachScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22>(this ScopeRunner scopeRunner, DIPipelineBehaviorAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22> behavior)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
+        where TArg8 : notnull
+        where TArg9 : notnull
+        where TArg10 : notnull
+        where TArg11 : notnull
+        where TArg12 : notnull
+        where TArg13 : notnull
+        where TArg14 : notnull
+        where TArg15 : notnull
+        where TArg16 : notnull
+        where TArg17 : notnull
+        where TArg18 : notnull
+        where TArg19 : notnull
+        where TArg20 : notnull
+        where TArg21 : notnull
+        where TArg22 : notnull
         => scopeRunner.ForEachScope((serviceProvider, next, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithToken(serviceProvider, cancellationToken);
@@ -433,6 +686,29 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ScopeRunner.ForEachScope" />
     public static ScopeRunner ForEachScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23>(this ScopeRunner scopeRunner, DIPipelineBehaviorAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23> behavior)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
+        where TArg8 : notnull
+        where TArg9 : notnull
+        where TArg10 : notnull
+        where TArg11 : notnull
+        where TArg12 : notnull
+        where TArg13 : notnull
+        where TArg14 : notnull
+        where TArg15 : notnull
+        where TArg16 : notnull
+        where TArg17 : notnull
+        where TArg18 : notnull
+        where TArg19 : notnull
+        where TArg20 : notnull
+        where TArg21 : notnull
+        where TArg22 : notnull
+        where TArg23 : notnull
         => scopeRunner.ForEachScope((serviceProvider, next, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithToken(serviceProvider, cancellationToken);
@@ -464,6 +740,30 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ScopeRunner.ForEachScope" />
     public static ScopeRunner ForEachScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24>(this ScopeRunner scopeRunner, DIPipelineBehaviorAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24> behavior)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
+        where TArg8 : notnull
+        where TArg9 : notnull
+        where TArg10 : notnull
+        where TArg11 : notnull
+        where TArg12 : notnull
+        where TArg13 : notnull
+        where TArg14 : notnull
+        where TArg15 : notnull
+        where TArg16 : notnull
+        where TArg17 : notnull
+        where TArg18 : notnull
+        where TArg19 : notnull
+        where TArg20 : notnull
+        where TArg21 : notnull
+        where TArg22 : notnull
+        where TArg23 : notnull
+        where TArg24 : notnull
         => scopeRunner.ForEachScope((serviceProvider, next, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithToken(serviceProvider, cancellationToken);
@@ -496,6 +796,31 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ScopeRunner.ForEachScope" />
     public static ScopeRunner ForEachScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25>(this ScopeRunner scopeRunner, DIPipelineBehaviorAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25> behavior)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
+        where TArg8 : notnull
+        where TArg9 : notnull
+        where TArg10 : notnull
+        where TArg11 : notnull
+        where TArg12 : notnull
+        where TArg13 : notnull
+        where TArg14 : notnull
+        where TArg15 : notnull
+        where TArg16 : notnull
+        where TArg17 : notnull
+        where TArg18 : notnull
+        where TArg19 : notnull
+        where TArg20 : notnull
+        where TArg21 : notnull
+        where TArg22 : notnull
+        where TArg23 : notnull
+        where TArg24 : notnull
+        where TArg25 : notnull
         => scopeRunner.ForEachScope((serviceProvider, next, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithToken(serviceProvider, cancellationToken);
@@ -529,6 +854,32 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ScopeRunner.ForEachScope" />
     public static ScopeRunner ForEachScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25, TArg26>(this ScopeRunner scopeRunner, DIPipelineBehaviorAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25, TArg26> behavior)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
+        where TArg8 : notnull
+        where TArg9 : notnull
+        where TArg10 : notnull
+        where TArg11 : notnull
+        where TArg12 : notnull
+        where TArg13 : notnull
+        where TArg14 : notnull
+        where TArg15 : notnull
+        where TArg16 : notnull
+        where TArg17 : notnull
+        where TArg18 : notnull
+        where TArg19 : notnull
+        where TArg20 : notnull
+        where TArg21 : notnull
+        where TArg22 : notnull
+        where TArg23 : notnull
+        where TArg24 : notnull
+        where TArg25 : notnull
+        where TArg26 : notnull
         => scopeRunner.ForEachScope((serviceProvider, next, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithToken(serviceProvider, cancellationToken);
@@ -563,6 +914,33 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ScopeRunner.ForEachScope" />
     public static ScopeRunner ForEachScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25, TArg26, TArg27>(this ScopeRunner scopeRunner, DIPipelineBehaviorAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25, TArg26, TArg27> behavior)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
+        where TArg8 : notnull
+        where TArg9 : notnull
+        where TArg10 : notnull
+        where TArg11 : notnull
+        where TArg12 : notnull
+        where TArg13 : notnull
+        where TArg14 : notnull
+        where TArg15 : notnull
+        where TArg16 : notnull
+        where TArg17 : notnull
+        where TArg18 : notnull
+        where TArg19 : notnull
+        where TArg20 : notnull
+        where TArg21 : notnull
+        where TArg22 : notnull
+        where TArg23 : notnull
+        where TArg24 : notnull
+        where TArg25 : notnull
+        where TArg26 : notnull
+        where TArg27 : notnull
         => scopeRunner.ForEachScope((serviceProvider, next, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithToken(serviceProvider, cancellationToken);
@@ -598,6 +976,34 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ScopeRunner.ForEachScope" />
     public static ScopeRunner ForEachScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25, TArg26, TArg27, TArg28>(this ScopeRunner scopeRunner, DIPipelineBehaviorAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25, TArg26, TArg27, TArg28> behavior)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
+        where TArg8 : notnull
+        where TArg9 : notnull
+        where TArg10 : notnull
+        where TArg11 : notnull
+        where TArg12 : notnull
+        where TArg13 : notnull
+        where TArg14 : notnull
+        where TArg15 : notnull
+        where TArg16 : notnull
+        where TArg17 : notnull
+        where TArg18 : notnull
+        where TArg19 : notnull
+        where TArg20 : notnull
+        where TArg21 : notnull
+        where TArg22 : notnull
+        where TArg23 : notnull
+        where TArg24 : notnull
+        where TArg25 : notnull
+        where TArg26 : notnull
+        where TArg27 : notnull
+        where TArg28 : notnull
         => scopeRunner.ForEachScope((serviceProvider, next, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithToken(serviceProvider, cancellationToken);
@@ -634,6 +1040,35 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ScopeRunner.ForEachScope" />
     public static ScopeRunner ForEachScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25, TArg26, TArg27, TArg28, TArg29>(this ScopeRunner scopeRunner, DIPipelineBehaviorAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25, TArg26, TArg27, TArg28, TArg29> behavior)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
+        where TArg8 : notnull
+        where TArg9 : notnull
+        where TArg10 : notnull
+        where TArg11 : notnull
+        where TArg12 : notnull
+        where TArg13 : notnull
+        where TArg14 : notnull
+        where TArg15 : notnull
+        where TArg16 : notnull
+        where TArg17 : notnull
+        where TArg18 : notnull
+        where TArg19 : notnull
+        where TArg20 : notnull
+        where TArg21 : notnull
+        where TArg22 : notnull
+        where TArg23 : notnull
+        where TArg24 : notnull
+        where TArg25 : notnull
+        where TArg26 : notnull
+        where TArg27 : notnull
+        where TArg28 : notnull
+        where TArg29 : notnull
         => scopeRunner.ForEachScope((serviceProvider, next, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithToken(serviceProvider, cancellationToken);
@@ -671,6 +1106,36 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ScopeRunner.ForEachScope" />
     public static ScopeRunner ForEachScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25, TArg26, TArg27, TArg28, TArg29, TArg30>(this ScopeRunner scopeRunner, DIPipelineBehaviorAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25, TArg26, TArg27, TArg28, TArg29, TArg30> behavior)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
+        where TArg8 : notnull
+        where TArg9 : notnull
+        where TArg10 : notnull
+        where TArg11 : notnull
+        where TArg12 : notnull
+        where TArg13 : notnull
+        where TArg14 : notnull
+        where TArg15 : notnull
+        where TArg16 : notnull
+        where TArg17 : notnull
+        where TArg18 : notnull
+        where TArg19 : notnull
+        where TArg20 : notnull
+        where TArg21 : notnull
+        where TArg22 : notnull
+        where TArg23 : notnull
+        where TArg24 : notnull
+        where TArg25 : notnull
+        where TArg26 : notnull
+        where TArg27 : notnull
+        where TArg28 : notnull
+        where TArg29 : notnull
+        where TArg30 : notnull
         => scopeRunner.ForEachScope((serviceProvider, next, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithToken(serviceProvider, cancellationToken);
@@ -709,6 +1174,37 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ScopeRunner.ForEachScope" />
     public static ScopeRunner ForEachScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25, TArg26, TArg27, TArg28, TArg29, TArg30, TArg31>(this ScopeRunner scopeRunner, DIPipelineBehaviorAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25, TArg26, TArg27, TArg28, TArg29, TArg30, TArg31> behavior)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
+        where TArg8 : notnull
+        where TArg9 : notnull
+        where TArg10 : notnull
+        where TArg11 : notnull
+        where TArg12 : notnull
+        where TArg13 : notnull
+        where TArg14 : notnull
+        where TArg15 : notnull
+        where TArg16 : notnull
+        where TArg17 : notnull
+        where TArg18 : notnull
+        where TArg19 : notnull
+        where TArg20 : notnull
+        where TArg21 : notnull
+        where TArg22 : notnull
+        where TArg23 : notnull
+        where TArg24 : notnull
+        where TArg25 : notnull
+        where TArg26 : notnull
+        where TArg27 : notnull
+        where TArg28 : notnull
+        where TArg29 : notnull
+        where TArg30 : notnull
+        where TArg31 : notnull
         => scopeRunner.ForEachScope((serviceProvider, next, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithToken(serviceProvider, cancellationToken);
@@ -748,6 +1244,38 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ScopeRunner.ForEachScope" />
     public static ScopeRunner ForEachScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25, TArg26, TArg27, TArg28, TArg29, TArg30, TArg31, TArg32>(this ScopeRunner scopeRunner, DIPipelineBehaviorAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25, TArg26, TArg27, TArg28, TArg29, TArg30, TArg31, TArg32> behavior)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
+        where TArg8 : notnull
+        where TArg9 : notnull
+        where TArg10 : notnull
+        where TArg11 : notnull
+        where TArg12 : notnull
+        where TArg13 : notnull
+        where TArg14 : notnull
+        where TArg15 : notnull
+        where TArg16 : notnull
+        where TArg17 : notnull
+        where TArg18 : notnull
+        where TArg19 : notnull
+        where TArg20 : notnull
+        where TArg21 : notnull
+        where TArg22 : notnull
+        where TArg23 : notnull
+        where TArg24 : notnull
+        where TArg25 : notnull
+        where TArg26 : notnull
+        where TArg27 : notnull
+        where TArg28 : notnull
+        where TArg29 : notnull
+        where TArg30 : notnull
+        where TArg31 : notnull
+        where TArg32 : notnull
         => scopeRunner.ForEachScope((serviceProvider, next, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithToken(serviceProvider, cancellationToken);
@@ -788,6 +1316,7 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ScopeRunner.ExecuteScope" />
     public static ConfiguredScopeRunner ExecuteScope<TArg1>(this ScopeRunner scopeRunner, DIExecuteScopeAsync<TArg1> scopedAction)
+        where TArg1 : notnull
         => scopeRunner.ExecuteScope((serviceProvider, context, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithContextWithToken(serviceProvider, context, cancellationToken);
@@ -797,6 +1326,8 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ScopeRunner.ExecuteScope" />
     public static ConfiguredScopeRunner ExecuteScope<TArg1, TArg2>(this ScopeRunner scopeRunner, DIExecuteScopeAsync<TArg1, TArg2> scopedAction)
+        where TArg1 : notnull
+        where TArg2 : notnull
         => scopeRunner.ExecuteScope((serviceProvider, context, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithContextWithToken(serviceProvider, context, cancellationToken);
@@ -807,6 +1338,9 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ScopeRunner.ExecuteScope" />
     public static ConfiguredScopeRunner ExecuteScope<TArg1, TArg2, TArg3>(this ScopeRunner scopeRunner, DIExecuteScopeAsync<TArg1, TArg2, TArg3> scopedAction)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
         => scopeRunner.ExecuteScope((serviceProvider, context, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithContextWithToken(serviceProvider, context, cancellationToken);
@@ -818,6 +1352,10 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ScopeRunner.ExecuteScope" />
     public static ConfiguredScopeRunner ExecuteScope<TArg1, TArg2, TArg3, TArg4>(this ScopeRunner scopeRunner, DIExecuteScopeAsync<TArg1, TArg2, TArg3, TArg4> scopedAction)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
         => scopeRunner.ExecuteScope((serviceProvider, context, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithContextWithToken(serviceProvider, context, cancellationToken);
@@ -830,6 +1368,11 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ScopeRunner.ExecuteScope" />
     public static ConfiguredScopeRunner ExecuteScope<TArg1, TArg2, TArg3, TArg4, TArg5>(this ScopeRunner scopeRunner, DIExecuteScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5> scopedAction)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
         => scopeRunner.ExecuteScope((serviceProvider, context, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithContextWithToken(serviceProvider, context, cancellationToken);
@@ -843,6 +1386,12 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ScopeRunner.ExecuteScope" />
     public static ConfiguredScopeRunner ExecuteScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6>(this ScopeRunner scopeRunner, DIExecuteScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6> scopedAction)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
         => scopeRunner.ExecuteScope((serviceProvider, context, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithContextWithToken(serviceProvider, context, cancellationToken);
@@ -857,6 +1406,13 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ScopeRunner.ExecuteScope" />
     public static ConfiguredScopeRunner ExecuteScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7>(this ScopeRunner scopeRunner, DIExecuteScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7> scopedAction)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
         => scopeRunner.ExecuteScope((serviceProvider, context, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithContextWithToken(serviceProvider, context, cancellationToken);
@@ -872,6 +1428,14 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ScopeRunner.ExecuteScope" />
     public static ConfiguredScopeRunner ExecuteScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8>(this ScopeRunner scopeRunner, DIExecuteScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8> scopedAction)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
+        where TArg8 : notnull
         => scopeRunner.ExecuteScope((serviceProvider, context, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithContextWithToken(serviceProvider, context, cancellationToken);
@@ -888,6 +1452,15 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ScopeRunner.ExecuteScope" />
     public static ConfiguredScopeRunner ExecuteScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9>(this ScopeRunner scopeRunner, DIExecuteScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9> scopedAction)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
+        where TArg8 : notnull
+        where TArg9 : notnull
         => scopeRunner.ExecuteScope((serviceProvider, context, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithContextWithToken(serviceProvider, context, cancellationToken);
@@ -905,6 +1478,16 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ScopeRunner.ExecuteScope" />
     public static ConfiguredScopeRunner ExecuteScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10>(this ScopeRunner scopeRunner, DIExecuteScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10> scopedAction)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
+        where TArg8 : notnull
+        where TArg9 : notnull
+        where TArg10 : notnull
         => scopeRunner.ExecuteScope((serviceProvider, context, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithContextWithToken(serviceProvider, context, cancellationToken);
@@ -923,6 +1506,17 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ScopeRunner.ExecuteScope" />
     public static ConfiguredScopeRunner ExecuteScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11>(this ScopeRunner scopeRunner, DIExecuteScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11> scopedAction)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
+        where TArg8 : notnull
+        where TArg9 : notnull
+        where TArg10 : notnull
+        where TArg11 : notnull
         => scopeRunner.ExecuteScope((serviceProvider, context, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithContextWithToken(serviceProvider, context, cancellationToken);
@@ -942,6 +1536,18 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ScopeRunner.ExecuteScope" />
     public static ConfiguredScopeRunner ExecuteScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12>(this ScopeRunner scopeRunner, DIExecuteScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12> scopedAction)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
+        where TArg8 : notnull
+        where TArg9 : notnull
+        where TArg10 : notnull
+        where TArg11 : notnull
+        where TArg12 : notnull
         => scopeRunner.ExecuteScope((serviceProvider, context, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithContextWithToken(serviceProvider, context, cancellationToken);
@@ -962,6 +1568,19 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ScopeRunner.ExecuteScope" />
     public static ConfiguredScopeRunner ExecuteScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13>(this ScopeRunner scopeRunner, DIExecuteScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13> scopedAction)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
+        where TArg8 : notnull
+        where TArg9 : notnull
+        where TArg10 : notnull
+        where TArg11 : notnull
+        where TArg12 : notnull
+        where TArg13 : notnull
         => scopeRunner.ExecuteScope((serviceProvider, context, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithContextWithToken(serviceProvider, context, cancellationToken);
@@ -983,6 +1602,20 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ScopeRunner.ExecuteScope" />
     public static ConfiguredScopeRunner ExecuteScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14>(this ScopeRunner scopeRunner, DIExecuteScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14> scopedAction)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
+        where TArg8 : notnull
+        where TArg9 : notnull
+        where TArg10 : notnull
+        where TArg11 : notnull
+        where TArg12 : notnull
+        where TArg13 : notnull
+        where TArg14 : notnull
         => scopeRunner.ExecuteScope((serviceProvider, context, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithContextWithToken(serviceProvider, context, cancellationToken);
@@ -1005,6 +1638,21 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ScopeRunner.ExecuteScope" />
     public static ConfiguredScopeRunner ExecuteScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15>(this ScopeRunner scopeRunner, DIExecuteScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15> scopedAction)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
+        where TArg8 : notnull
+        where TArg9 : notnull
+        where TArg10 : notnull
+        where TArg11 : notnull
+        where TArg12 : notnull
+        where TArg13 : notnull
+        where TArg14 : notnull
+        where TArg15 : notnull
         => scopeRunner.ExecuteScope((serviceProvider, context, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithContextWithToken(serviceProvider, context, cancellationToken);
@@ -1028,6 +1676,22 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ScopeRunner.ExecuteScope" />
     public static ConfiguredScopeRunner ExecuteScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16>(this ScopeRunner scopeRunner, DIExecuteScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16> scopedAction)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
+        where TArg8 : notnull
+        where TArg9 : notnull
+        where TArg10 : notnull
+        where TArg11 : notnull
+        where TArg12 : notnull
+        where TArg13 : notnull
+        where TArg14 : notnull
+        where TArg15 : notnull
+        where TArg16 : notnull
         => scopeRunner.ExecuteScope((serviceProvider, context, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithContextWithToken(serviceProvider, context, cancellationToken);
@@ -1052,6 +1716,23 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ScopeRunner.ExecuteScope" />
     public static ConfiguredScopeRunner ExecuteScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17>(this ScopeRunner scopeRunner, DIExecuteScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17> scopedAction)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
+        where TArg8 : notnull
+        where TArg9 : notnull
+        where TArg10 : notnull
+        where TArg11 : notnull
+        where TArg12 : notnull
+        where TArg13 : notnull
+        where TArg14 : notnull
+        where TArg15 : notnull
+        where TArg16 : notnull
+        where TArg17 : notnull
         => scopeRunner.ExecuteScope((serviceProvider, context, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithContextWithToken(serviceProvider, context, cancellationToken);
@@ -1077,6 +1758,24 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ScopeRunner.ExecuteScope" />
     public static ConfiguredScopeRunner ExecuteScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18>(this ScopeRunner scopeRunner, DIExecuteScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18> scopedAction)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
+        where TArg8 : notnull
+        where TArg9 : notnull
+        where TArg10 : notnull
+        where TArg11 : notnull
+        where TArg12 : notnull
+        where TArg13 : notnull
+        where TArg14 : notnull
+        where TArg15 : notnull
+        where TArg16 : notnull
+        where TArg17 : notnull
+        where TArg18 : notnull
         => scopeRunner.ExecuteScope((serviceProvider, context, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithContextWithToken(serviceProvider, context, cancellationToken);
@@ -1103,6 +1802,25 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ScopeRunner.ExecuteScope" />
     public static ConfiguredScopeRunner ExecuteScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19>(this ScopeRunner scopeRunner, DIExecuteScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19> scopedAction)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
+        where TArg8 : notnull
+        where TArg9 : notnull
+        where TArg10 : notnull
+        where TArg11 : notnull
+        where TArg12 : notnull
+        where TArg13 : notnull
+        where TArg14 : notnull
+        where TArg15 : notnull
+        where TArg16 : notnull
+        where TArg17 : notnull
+        where TArg18 : notnull
+        where TArg19 : notnull
         => scopeRunner.ExecuteScope((serviceProvider, context, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithContextWithToken(serviceProvider, context, cancellationToken);
@@ -1130,6 +1848,26 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ScopeRunner.ExecuteScope" />
     public static ConfiguredScopeRunner ExecuteScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20>(this ScopeRunner scopeRunner, DIExecuteScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20> scopedAction)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
+        where TArg8 : notnull
+        where TArg9 : notnull
+        where TArg10 : notnull
+        where TArg11 : notnull
+        where TArg12 : notnull
+        where TArg13 : notnull
+        where TArg14 : notnull
+        where TArg15 : notnull
+        where TArg16 : notnull
+        where TArg17 : notnull
+        where TArg18 : notnull
+        where TArg19 : notnull
+        where TArg20 : notnull
         => scopeRunner.ExecuteScope((serviceProvider, context, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithContextWithToken(serviceProvider, context, cancellationToken);
@@ -1158,6 +1896,27 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ScopeRunner.ExecuteScope" />
     public static ConfiguredScopeRunner ExecuteScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21>(this ScopeRunner scopeRunner, DIExecuteScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21> scopedAction)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
+        where TArg8 : notnull
+        where TArg9 : notnull
+        where TArg10 : notnull
+        where TArg11 : notnull
+        where TArg12 : notnull
+        where TArg13 : notnull
+        where TArg14 : notnull
+        where TArg15 : notnull
+        where TArg16 : notnull
+        where TArg17 : notnull
+        where TArg18 : notnull
+        where TArg19 : notnull
+        where TArg20 : notnull
+        where TArg21 : notnull
         => scopeRunner.ExecuteScope((serviceProvider, context, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithContextWithToken(serviceProvider, context, cancellationToken);
@@ -1187,6 +1946,28 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ScopeRunner.ExecuteScope" />
     public static ConfiguredScopeRunner ExecuteScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22>(this ScopeRunner scopeRunner, DIExecuteScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22> scopedAction)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
+        where TArg8 : notnull
+        where TArg9 : notnull
+        where TArg10 : notnull
+        where TArg11 : notnull
+        where TArg12 : notnull
+        where TArg13 : notnull
+        where TArg14 : notnull
+        where TArg15 : notnull
+        where TArg16 : notnull
+        where TArg17 : notnull
+        where TArg18 : notnull
+        where TArg19 : notnull
+        where TArg20 : notnull
+        where TArg21 : notnull
+        where TArg22 : notnull
         => scopeRunner.ExecuteScope((serviceProvider, context, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithContextWithToken(serviceProvider, context, cancellationToken);
@@ -1217,6 +1998,29 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ScopeRunner.ExecuteScope" />
     public static ConfiguredScopeRunner ExecuteScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23>(this ScopeRunner scopeRunner, DIExecuteScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23> scopedAction)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
+        where TArg8 : notnull
+        where TArg9 : notnull
+        where TArg10 : notnull
+        where TArg11 : notnull
+        where TArg12 : notnull
+        where TArg13 : notnull
+        where TArg14 : notnull
+        where TArg15 : notnull
+        where TArg16 : notnull
+        where TArg17 : notnull
+        where TArg18 : notnull
+        where TArg19 : notnull
+        where TArg20 : notnull
+        where TArg21 : notnull
+        where TArg22 : notnull
+        where TArg23 : notnull
         => scopeRunner.ExecuteScope((serviceProvider, context, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithContextWithToken(serviceProvider, context, cancellationToken);
@@ -1248,6 +2052,30 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ScopeRunner.ExecuteScope" />
     public static ConfiguredScopeRunner ExecuteScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24>(this ScopeRunner scopeRunner, DIExecuteScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24> scopedAction)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
+        where TArg8 : notnull
+        where TArg9 : notnull
+        where TArg10 : notnull
+        where TArg11 : notnull
+        where TArg12 : notnull
+        where TArg13 : notnull
+        where TArg14 : notnull
+        where TArg15 : notnull
+        where TArg16 : notnull
+        where TArg17 : notnull
+        where TArg18 : notnull
+        where TArg19 : notnull
+        where TArg20 : notnull
+        where TArg21 : notnull
+        where TArg22 : notnull
+        where TArg23 : notnull
+        where TArg24 : notnull
         => scopeRunner.ExecuteScope((serviceProvider, context, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithContextWithToken(serviceProvider, context, cancellationToken);
@@ -1280,6 +2108,31 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ScopeRunner.ExecuteScope" />
     public static ConfiguredScopeRunner ExecuteScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25>(this ScopeRunner scopeRunner, DIExecuteScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25> scopedAction)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
+        where TArg8 : notnull
+        where TArg9 : notnull
+        where TArg10 : notnull
+        where TArg11 : notnull
+        where TArg12 : notnull
+        where TArg13 : notnull
+        where TArg14 : notnull
+        where TArg15 : notnull
+        where TArg16 : notnull
+        where TArg17 : notnull
+        where TArg18 : notnull
+        where TArg19 : notnull
+        where TArg20 : notnull
+        where TArg21 : notnull
+        where TArg22 : notnull
+        where TArg23 : notnull
+        where TArg24 : notnull
+        where TArg25 : notnull
         => scopeRunner.ExecuteScope((serviceProvider, context, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithContextWithToken(serviceProvider, context, cancellationToken);
@@ -1313,6 +2166,32 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ScopeRunner.ExecuteScope" />
     public static ConfiguredScopeRunner ExecuteScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25, TArg26>(this ScopeRunner scopeRunner, DIExecuteScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25, TArg26> scopedAction)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
+        where TArg8 : notnull
+        where TArg9 : notnull
+        where TArg10 : notnull
+        where TArg11 : notnull
+        where TArg12 : notnull
+        where TArg13 : notnull
+        where TArg14 : notnull
+        where TArg15 : notnull
+        where TArg16 : notnull
+        where TArg17 : notnull
+        where TArg18 : notnull
+        where TArg19 : notnull
+        where TArg20 : notnull
+        where TArg21 : notnull
+        where TArg22 : notnull
+        where TArg23 : notnull
+        where TArg24 : notnull
+        where TArg25 : notnull
+        where TArg26 : notnull
         => scopeRunner.ExecuteScope((serviceProvider, context, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithContextWithToken(serviceProvider, context, cancellationToken);
@@ -1347,6 +2226,33 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ScopeRunner.ExecuteScope" />
     public static ConfiguredScopeRunner ExecuteScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25, TArg26, TArg27>(this ScopeRunner scopeRunner, DIExecuteScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25, TArg26, TArg27> scopedAction)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
+        where TArg8 : notnull
+        where TArg9 : notnull
+        where TArg10 : notnull
+        where TArg11 : notnull
+        where TArg12 : notnull
+        where TArg13 : notnull
+        where TArg14 : notnull
+        where TArg15 : notnull
+        where TArg16 : notnull
+        where TArg17 : notnull
+        where TArg18 : notnull
+        where TArg19 : notnull
+        where TArg20 : notnull
+        where TArg21 : notnull
+        where TArg22 : notnull
+        where TArg23 : notnull
+        where TArg24 : notnull
+        where TArg25 : notnull
+        where TArg26 : notnull
+        where TArg27 : notnull
         => scopeRunner.ExecuteScope((serviceProvider, context, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithContextWithToken(serviceProvider, context, cancellationToken);
@@ -1382,6 +2288,34 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ScopeRunner.ExecuteScope" />
     public static ConfiguredScopeRunner ExecuteScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25, TArg26, TArg27, TArg28>(this ScopeRunner scopeRunner, DIExecuteScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25, TArg26, TArg27, TArg28> scopedAction)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
+        where TArg8 : notnull
+        where TArg9 : notnull
+        where TArg10 : notnull
+        where TArg11 : notnull
+        where TArg12 : notnull
+        where TArg13 : notnull
+        where TArg14 : notnull
+        where TArg15 : notnull
+        where TArg16 : notnull
+        where TArg17 : notnull
+        where TArg18 : notnull
+        where TArg19 : notnull
+        where TArg20 : notnull
+        where TArg21 : notnull
+        where TArg22 : notnull
+        where TArg23 : notnull
+        where TArg24 : notnull
+        where TArg25 : notnull
+        where TArg26 : notnull
+        where TArg27 : notnull
+        where TArg28 : notnull
         => scopeRunner.ExecuteScope((serviceProvider, context, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithContextWithToken(serviceProvider, context, cancellationToken);
@@ -1418,6 +2352,35 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ScopeRunner.ExecuteScope" />
     public static ConfiguredScopeRunner ExecuteScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25, TArg26, TArg27, TArg28, TArg29>(this ScopeRunner scopeRunner, DIExecuteScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25, TArg26, TArg27, TArg28, TArg29> scopedAction)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
+        where TArg8 : notnull
+        where TArg9 : notnull
+        where TArg10 : notnull
+        where TArg11 : notnull
+        where TArg12 : notnull
+        where TArg13 : notnull
+        where TArg14 : notnull
+        where TArg15 : notnull
+        where TArg16 : notnull
+        where TArg17 : notnull
+        where TArg18 : notnull
+        where TArg19 : notnull
+        where TArg20 : notnull
+        where TArg21 : notnull
+        where TArg22 : notnull
+        where TArg23 : notnull
+        where TArg24 : notnull
+        where TArg25 : notnull
+        where TArg26 : notnull
+        where TArg27 : notnull
+        where TArg28 : notnull
+        where TArg29 : notnull
         => scopeRunner.ExecuteScope((serviceProvider, context, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithContextWithToken(serviceProvider, context, cancellationToken);
@@ -1455,6 +2418,36 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ScopeRunner.ExecuteScope" />
     public static ConfiguredScopeRunner ExecuteScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25, TArg26, TArg27, TArg28, TArg29, TArg30>(this ScopeRunner scopeRunner, DIExecuteScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25, TArg26, TArg27, TArg28, TArg29, TArg30> scopedAction)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
+        where TArg8 : notnull
+        where TArg9 : notnull
+        where TArg10 : notnull
+        where TArg11 : notnull
+        where TArg12 : notnull
+        where TArg13 : notnull
+        where TArg14 : notnull
+        where TArg15 : notnull
+        where TArg16 : notnull
+        where TArg17 : notnull
+        where TArg18 : notnull
+        where TArg19 : notnull
+        where TArg20 : notnull
+        where TArg21 : notnull
+        where TArg22 : notnull
+        where TArg23 : notnull
+        where TArg24 : notnull
+        where TArg25 : notnull
+        where TArg26 : notnull
+        where TArg27 : notnull
+        where TArg28 : notnull
+        where TArg29 : notnull
+        where TArg30 : notnull
         => scopeRunner.ExecuteScope((serviceProvider, context, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithContextWithToken(serviceProvider, context, cancellationToken);
@@ -1493,6 +2486,37 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ScopeRunner.ExecuteScope" />
     public static ConfiguredScopeRunner ExecuteScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25, TArg26, TArg27, TArg28, TArg29, TArg30, TArg31>(this ScopeRunner scopeRunner, DIExecuteScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25, TArg26, TArg27, TArg28, TArg29, TArg30, TArg31> scopedAction)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
+        where TArg8 : notnull
+        where TArg9 : notnull
+        where TArg10 : notnull
+        where TArg11 : notnull
+        where TArg12 : notnull
+        where TArg13 : notnull
+        where TArg14 : notnull
+        where TArg15 : notnull
+        where TArg16 : notnull
+        where TArg17 : notnull
+        where TArg18 : notnull
+        where TArg19 : notnull
+        where TArg20 : notnull
+        where TArg21 : notnull
+        where TArg22 : notnull
+        where TArg23 : notnull
+        where TArg24 : notnull
+        where TArg25 : notnull
+        where TArg26 : notnull
+        where TArg27 : notnull
+        where TArg28 : notnull
+        where TArg29 : notnull
+        where TArg30 : notnull
+        where TArg31 : notnull
         => scopeRunner.ExecuteScope((serviceProvider, context, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithContextWithToken(serviceProvider, context, cancellationToken);
@@ -1532,6 +2556,38 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ScopeRunner.ExecuteScope" />
     public static ConfiguredScopeRunner ExecuteScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25, TArg26, TArg27, TArg28, TArg29, TArg30, TArg31, TArg32>(this ScopeRunner scopeRunner, DIExecuteScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25, TArg26, TArg27, TArg28, TArg29, TArg30, TArg31, TArg32> scopedAction)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
+        where TArg8 : notnull
+        where TArg9 : notnull
+        where TArg10 : notnull
+        where TArg11 : notnull
+        where TArg12 : notnull
+        where TArg13 : notnull
+        where TArg14 : notnull
+        where TArg15 : notnull
+        where TArg16 : notnull
+        where TArg17 : notnull
+        where TArg18 : notnull
+        where TArg19 : notnull
+        where TArg20 : notnull
+        where TArg21 : notnull
+        where TArg22 : notnull
+        where TArg23 : notnull
+        where TArg24 : notnull
+        where TArg25 : notnull
+        where TArg26 : notnull
+        where TArg27 : notnull
+        where TArg28 : notnull
+        where TArg29 : notnull
+        where TArg30 : notnull
+        where TArg31 : notnull
+        where TArg32 : notnull
         => scopeRunner.ExecuteScope((serviceProvider, context, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithContextWithToken(serviceProvider, context, cancellationToken);
@@ -1572,6 +2628,7 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ConfiguredScopeRunner.ThenExecuteScope" />
     public static ConfiguredScopeRunner ThenExecuteScope<TArg1>(this ConfiguredScopeRunner scopeRunner, DIExecuteScopeAsync<TArg1> scopedAction)
+        where TArg1 : notnull
         => scopeRunner.ThenExecuteScope((serviceProvider, context, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithContextWithToken(serviceProvider, context, cancellationToken);
@@ -1581,6 +2638,8 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ConfiguredScopeRunner.ThenExecuteScope" />
     public static ConfiguredScopeRunner ThenExecuteScope<TArg1, TArg2>(this ConfiguredScopeRunner scopeRunner, DIExecuteScopeAsync<TArg1, TArg2> scopedAction)
+        where TArg1 : notnull
+        where TArg2 : notnull
         => scopeRunner.ThenExecuteScope((serviceProvider, context, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithContextWithToken(serviceProvider, context, cancellationToken);
@@ -1591,6 +2650,9 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ConfiguredScopeRunner.ThenExecuteScope" />
     public static ConfiguredScopeRunner ThenExecuteScope<TArg1, TArg2, TArg3>(this ConfiguredScopeRunner scopeRunner, DIExecuteScopeAsync<TArg1, TArg2, TArg3> scopedAction)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
         => scopeRunner.ThenExecuteScope((serviceProvider, context, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithContextWithToken(serviceProvider, context, cancellationToken);
@@ -1602,6 +2664,10 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ConfiguredScopeRunner.ThenExecuteScope" />
     public static ConfiguredScopeRunner ThenExecuteScope<TArg1, TArg2, TArg3, TArg4>(this ConfiguredScopeRunner scopeRunner, DIExecuteScopeAsync<TArg1, TArg2, TArg3, TArg4> scopedAction)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
         => scopeRunner.ThenExecuteScope((serviceProvider, context, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithContextWithToken(serviceProvider, context, cancellationToken);
@@ -1614,6 +2680,11 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ConfiguredScopeRunner.ThenExecuteScope" />
     public static ConfiguredScopeRunner ThenExecuteScope<TArg1, TArg2, TArg3, TArg4, TArg5>(this ConfiguredScopeRunner scopeRunner, DIExecuteScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5> scopedAction)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
         => scopeRunner.ThenExecuteScope((serviceProvider, context, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithContextWithToken(serviceProvider, context, cancellationToken);
@@ -1627,6 +2698,12 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ConfiguredScopeRunner.ThenExecuteScope" />
     public static ConfiguredScopeRunner ThenExecuteScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6>(this ConfiguredScopeRunner scopeRunner, DIExecuteScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6> scopedAction)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
         => scopeRunner.ThenExecuteScope((serviceProvider, context, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithContextWithToken(serviceProvider, context, cancellationToken);
@@ -1641,6 +2718,13 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ConfiguredScopeRunner.ThenExecuteScope" />
     public static ConfiguredScopeRunner ThenExecuteScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7>(this ConfiguredScopeRunner scopeRunner, DIExecuteScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7> scopedAction)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
         => scopeRunner.ThenExecuteScope((serviceProvider, context, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithContextWithToken(serviceProvider, context, cancellationToken);
@@ -1656,6 +2740,14 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ConfiguredScopeRunner.ThenExecuteScope" />
     public static ConfiguredScopeRunner ThenExecuteScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8>(this ConfiguredScopeRunner scopeRunner, DIExecuteScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8> scopedAction)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
+        where TArg8 : notnull
         => scopeRunner.ThenExecuteScope((serviceProvider, context, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithContextWithToken(serviceProvider, context, cancellationToken);
@@ -1672,6 +2764,15 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ConfiguredScopeRunner.ThenExecuteScope" />
     public static ConfiguredScopeRunner ThenExecuteScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9>(this ConfiguredScopeRunner scopeRunner, DIExecuteScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9> scopedAction)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
+        where TArg8 : notnull
+        where TArg9 : notnull
         => scopeRunner.ThenExecuteScope((serviceProvider, context, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithContextWithToken(serviceProvider, context, cancellationToken);
@@ -1689,6 +2790,16 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ConfiguredScopeRunner.ThenExecuteScope" />
     public static ConfiguredScopeRunner ThenExecuteScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10>(this ConfiguredScopeRunner scopeRunner, DIExecuteScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10> scopedAction)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
+        where TArg8 : notnull
+        where TArg9 : notnull
+        where TArg10 : notnull
         => scopeRunner.ThenExecuteScope((serviceProvider, context, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithContextWithToken(serviceProvider, context, cancellationToken);
@@ -1707,6 +2818,17 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ConfiguredScopeRunner.ThenExecuteScope" />
     public static ConfiguredScopeRunner ThenExecuteScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11>(this ConfiguredScopeRunner scopeRunner, DIExecuteScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11> scopedAction)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
+        where TArg8 : notnull
+        where TArg9 : notnull
+        where TArg10 : notnull
+        where TArg11 : notnull
         => scopeRunner.ThenExecuteScope((serviceProvider, context, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithContextWithToken(serviceProvider, context, cancellationToken);
@@ -1726,6 +2848,18 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ConfiguredScopeRunner.ThenExecuteScope" />
     public static ConfiguredScopeRunner ThenExecuteScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12>(this ConfiguredScopeRunner scopeRunner, DIExecuteScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12> scopedAction)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
+        where TArg8 : notnull
+        where TArg9 : notnull
+        where TArg10 : notnull
+        where TArg11 : notnull
+        where TArg12 : notnull
         => scopeRunner.ThenExecuteScope((serviceProvider, context, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithContextWithToken(serviceProvider, context, cancellationToken);
@@ -1746,6 +2880,19 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ConfiguredScopeRunner.ThenExecuteScope" />
     public static ConfiguredScopeRunner ThenExecuteScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13>(this ConfiguredScopeRunner scopeRunner, DIExecuteScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13> scopedAction)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
+        where TArg8 : notnull
+        where TArg9 : notnull
+        where TArg10 : notnull
+        where TArg11 : notnull
+        where TArg12 : notnull
+        where TArg13 : notnull
         => scopeRunner.ThenExecuteScope((serviceProvider, context, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithContextWithToken(serviceProvider, context, cancellationToken);
@@ -1767,6 +2914,20 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ConfiguredScopeRunner.ThenExecuteScope" />
     public static ConfiguredScopeRunner ThenExecuteScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14>(this ConfiguredScopeRunner scopeRunner, DIExecuteScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14> scopedAction)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
+        where TArg8 : notnull
+        where TArg9 : notnull
+        where TArg10 : notnull
+        where TArg11 : notnull
+        where TArg12 : notnull
+        where TArg13 : notnull
+        where TArg14 : notnull
         => scopeRunner.ThenExecuteScope((serviceProvider, context, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithContextWithToken(serviceProvider, context, cancellationToken);
@@ -1789,6 +2950,21 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ConfiguredScopeRunner.ThenExecuteScope" />
     public static ConfiguredScopeRunner ThenExecuteScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15>(this ConfiguredScopeRunner scopeRunner, DIExecuteScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15> scopedAction)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
+        where TArg8 : notnull
+        where TArg9 : notnull
+        where TArg10 : notnull
+        where TArg11 : notnull
+        where TArg12 : notnull
+        where TArg13 : notnull
+        where TArg14 : notnull
+        where TArg15 : notnull
         => scopeRunner.ThenExecuteScope((serviceProvider, context, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithContextWithToken(serviceProvider, context, cancellationToken);
@@ -1812,6 +2988,22 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ConfiguredScopeRunner.ThenExecuteScope" />
     public static ConfiguredScopeRunner ThenExecuteScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16>(this ConfiguredScopeRunner scopeRunner, DIExecuteScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16> scopedAction)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
+        where TArg8 : notnull
+        where TArg9 : notnull
+        where TArg10 : notnull
+        where TArg11 : notnull
+        where TArg12 : notnull
+        where TArg13 : notnull
+        where TArg14 : notnull
+        where TArg15 : notnull
+        where TArg16 : notnull
         => scopeRunner.ThenExecuteScope((serviceProvider, context, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithContextWithToken(serviceProvider, context, cancellationToken);
@@ -1836,6 +3028,23 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ConfiguredScopeRunner.ThenExecuteScope" />
     public static ConfiguredScopeRunner ThenExecuteScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17>(this ConfiguredScopeRunner scopeRunner, DIExecuteScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17> scopedAction)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
+        where TArg8 : notnull
+        where TArg9 : notnull
+        where TArg10 : notnull
+        where TArg11 : notnull
+        where TArg12 : notnull
+        where TArg13 : notnull
+        where TArg14 : notnull
+        where TArg15 : notnull
+        where TArg16 : notnull
+        where TArg17 : notnull
         => scopeRunner.ThenExecuteScope((serviceProvider, context, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithContextWithToken(serviceProvider, context, cancellationToken);
@@ -1861,6 +3070,24 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ConfiguredScopeRunner.ThenExecuteScope" />
     public static ConfiguredScopeRunner ThenExecuteScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18>(this ConfiguredScopeRunner scopeRunner, DIExecuteScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18> scopedAction)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
+        where TArg8 : notnull
+        where TArg9 : notnull
+        where TArg10 : notnull
+        where TArg11 : notnull
+        where TArg12 : notnull
+        where TArg13 : notnull
+        where TArg14 : notnull
+        where TArg15 : notnull
+        where TArg16 : notnull
+        where TArg17 : notnull
+        where TArg18 : notnull
         => scopeRunner.ThenExecuteScope((serviceProvider, context, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithContextWithToken(serviceProvider, context, cancellationToken);
@@ -1887,6 +3114,25 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ConfiguredScopeRunner.ThenExecuteScope" />
     public static ConfiguredScopeRunner ThenExecuteScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19>(this ConfiguredScopeRunner scopeRunner, DIExecuteScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19> scopedAction)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
+        where TArg8 : notnull
+        where TArg9 : notnull
+        where TArg10 : notnull
+        where TArg11 : notnull
+        where TArg12 : notnull
+        where TArg13 : notnull
+        where TArg14 : notnull
+        where TArg15 : notnull
+        where TArg16 : notnull
+        where TArg17 : notnull
+        where TArg18 : notnull
+        where TArg19 : notnull
         => scopeRunner.ThenExecuteScope((serviceProvider, context, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithContextWithToken(serviceProvider, context, cancellationToken);
@@ -1914,6 +3160,26 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ConfiguredScopeRunner.ThenExecuteScope" />
     public static ConfiguredScopeRunner ThenExecuteScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20>(this ConfiguredScopeRunner scopeRunner, DIExecuteScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20> scopedAction)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
+        where TArg8 : notnull
+        where TArg9 : notnull
+        where TArg10 : notnull
+        where TArg11 : notnull
+        where TArg12 : notnull
+        where TArg13 : notnull
+        where TArg14 : notnull
+        where TArg15 : notnull
+        where TArg16 : notnull
+        where TArg17 : notnull
+        where TArg18 : notnull
+        where TArg19 : notnull
+        where TArg20 : notnull
         => scopeRunner.ThenExecuteScope((serviceProvider, context, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithContextWithToken(serviceProvider, context, cancellationToken);
@@ -1942,6 +3208,27 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ConfiguredScopeRunner.ThenExecuteScope" />
     public static ConfiguredScopeRunner ThenExecuteScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21>(this ConfiguredScopeRunner scopeRunner, DIExecuteScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21> scopedAction)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
+        where TArg8 : notnull
+        where TArg9 : notnull
+        where TArg10 : notnull
+        where TArg11 : notnull
+        where TArg12 : notnull
+        where TArg13 : notnull
+        where TArg14 : notnull
+        where TArg15 : notnull
+        where TArg16 : notnull
+        where TArg17 : notnull
+        where TArg18 : notnull
+        where TArg19 : notnull
+        where TArg20 : notnull
+        where TArg21 : notnull
         => scopeRunner.ThenExecuteScope((serviceProvider, context, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithContextWithToken(serviceProvider, context, cancellationToken);
@@ -1971,6 +3258,28 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ConfiguredScopeRunner.ThenExecuteScope" />
     public static ConfiguredScopeRunner ThenExecuteScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22>(this ConfiguredScopeRunner scopeRunner, DIExecuteScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22> scopedAction)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
+        where TArg8 : notnull
+        where TArg9 : notnull
+        where TArg10 : notnull
+        where TArg11 : notnull
+        where TArg12 : notnull
+        where TArg13 : notnull
+        where TArg14 : notnull
+        where TArg15 : notnull
+        where TArg16 : notnull
+        where TArg17 : notnull
+        where TArg18 : notnull
+        where TArg19 : notnull
+        where TArg20 : notnull
+        where TArg21 : notnull
+        where TArg22 : notnull
         => scopeRunner.ThenExecuteScope((serviceProvider, context, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithContextWithToken(serviceProvider, context, cancellationToken);
@@ -2001,6 +3310,29 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ConfiguredScopeRunner.ThenExecuteScope" />
     public static ConfiguredScopeRunner ThenExecuteScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23>(this ConfiguredScopeRunner scopeRunner, DIExecuteScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23> scopedAction)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
+        where TArg8 : notnull
+        where TArg9 : notnull
+        where TArg10 : notnull
+        where TArg11 : notnull
+        where TArg12 : notnull
+        where TArg13 : notnull
+        where TArg14 : notnull
+        where TArg15 : notnull
+        where TArg16 : notnull
+        where TArg17 : notnull
+        where TArg18 : notnull
+        where TArg19 : notnull
+        where TArg20 : notnull
+        where TArg21 : notnull
+        where TArg22 : notnull
+        where TArg23 : notnull
         => scopeRunner.ThenExecuteScope((serviceProvider, context, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithContextWithToken(serviceProvider, context, cancellationToken);
@@ -2032,6 +3364,30 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ConfiguredScopeRunner.ThenExecuteScope" />
     public static ConfiguredScopeRunner ThenExecuteScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24>(this ConfiguredScopeRunner scopeRunner, DIExecuteScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24> scopedAction)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
+        where TArg8 : notnull
+        where TArg9 : notnull
+        where TArg10 : notnull
+        where TArg11 : notnull
+        where TArg12 : notnull
+        where TArg13 : notnull
+        where TArg14 : notnull
+        where TArg15 : notnull
+        where TArg16 : notnull
+        where TArg17 : notnull
+        where TArg18 : notnull
+        where TArg19 : notnull
+        where TArg20 : notnull
+        where TArg21 : notnull
+        where TArg22 : notnull
+        where TArg23 : notnull
+        where TArg24 : notnull
         => scopeRunner.ThenExecuteScope((serviceProvider, context, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithContextWithToken(serviceProvider, context, cancellationToken);
@@ -2064,6 +3420,31 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ConfiguredScopeRunner.ThenExecuteScope" />
     public static ConfiguredScopeRunner ThenExecuteScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25>(this ConfiguredScopeRunner scopeRunner, DIExecuteScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25> scopedAction)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
+        where TArg8 : notnull
+        where TArg9 : notnull
+        where TArg10 : notnull
+        where TArg11 : notnull
+        where TArg12 : notnull
+        where TArg13 : notnull
+        where TArg14 : notnull
+        where TArg15 : notnull
+        where TArg16 : notnull
+        where TArg17 : notnull
+        where TArg18 : notnull
+        where TArg19 : notnull
+        where TArg20 : notnull
+        where TArg21 : notnull
+        where TArg22 : notnull
+        where TArg23 : notnull
+        where TArg24 : notnull
+        where TArg25 : notnull
         => scopeRunner.ThenExecuteScope((serviceProvider, context, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithContextWithToken(serviceProvider, context, cancellationToken);
@@ -2097,6 +3478,32 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ConfiguredScopeRunner.ThenExecuteScope" />
     public static ConfiguredScopeRunner ThenExecuteScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25, TArg26>(this ConfiguredScopeRunner scopeRunner, DIExecuteScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25, TArg26> scopedAction)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
+        where TArg8 : notnull
+        where TArg9 : notnull
+        where TArg10 : notnull
+        where TArg11 : notnull
+        where TArg12 : notnull
+        where TArg13 : notnull
+        where TArg14 : notnull
+        where TArg15 : notnull
+        where TArg16 : notnull
+        where TArg17 : notnull
+        where TArg18 : notnull
+        where TArg19 : notnull
+        where TArg20 : notnull
+        where TArg21 : notnull
+        where TArg22 : notnull
+        where TArg23 : notnull
+        where TArg24 : notnull
+        where TArg25 : notnull
+        where TArg26 : notnull
         => scopeRunner.ThenExecuteScope((serviceProvider, context, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithContextWithToken(serviceProvider, context, cancellationToken);
@@ -2131,6 +3538,33 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ConfiguredScopeRunner.ThenExecuteScope" />
     public static ConfiguredScopeRunner ThenExecuteScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25, TArg26, TArg27>(this ConfiguredScopeRunner scopeRunner, DIExecuteScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25, TArg26, TArg27> scopedAction)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
+        where TArg8 : notnull
+        where TArg9 : notnull
+        where TArg10 : notnull
+        where TArg11 : notnull
+        where TArg12 : notnull
+        where TArg13 : notnull
+        where TArg14 : notnull
+        where TArg15 : notnull
+        where TArg16 : notnull
+        where TArg17 : notnull
+        where TArg18 : notnull
+        where TArg19 : notnull
+        where TArg20 : notnull
+        where TArg21 : notnull
+        where TArg22 : notnull
+        where TArg23 : notnull
+        where TArg24 : notnull
+        where TArg25 : notnull
+        where TArg26 : notnull
+        where TArg27 : notnull
         => scopeRunner.ThenExecuteScope((serviceProvider, context, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithContextWithToken(serviceProvider, context, cancellationToken);
@@ -2166,6 +3600,34 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ConfiguredScopeRunner.ThenExecuteScope" />
     public static ConfiguredScopeRunner ThenExecuteScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25, TArg26, TArg27, TArg28>(this ConfiguredScopeRunner scopeRunner, DIExecuteScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25, TArg26, TArg27, TArg28> scopedAction)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
+        where TArg8 : notnull
+        where TArg9 : notnull
+        where TArg10 : notnull
+        where TArg11 : notnull
+        where TArg12 : notnull
+        where TArg13 : notnull
+        where TArg14 : notnull
+        where TArg15 : notnull
+        where TArg16 : notnull
+        where TArg17 : notnull
+        where TArg18 : notnull
+        where TArg19 : notnull
+        where TArg20 : notnull
+        where TArg21 : notnull
+        where TArg22 : notnull
+        where TArg23 : notnull
+        where TArg24 : notnull
+        where TArg25 : notnull
+        where TArg26 : notnull
+        where TArg27 : notnull
+        where TArg28 : notnull
         => scopeRunner.ThenExecuteScope((serviceProvider, context, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithContextWithToken(serviceProvider, context, cancellationToken);
@@ -2202,6 +3664,35 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ConfiguredScopeRunner.ThenExecuteScope" />
     public static ConfiguredScopeRunner ThenExecuteScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25, TArg26, TArg27, TArg28, TArg29>(this ConfiguredScopeRunner scopeRunner, DIExecuteScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25, TArg26, TArg27, TArg28, TArg29> scopedAction)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
+        where TArg8 : notnull
+        where TArg9 : notnull
+        where TArg10 : notnull
+        where TArg11 : notnull
+        where TArg12 : notnull
+        where TArg13 : notnull
+        where TArg14 : notnull
+        where TArg15 : notnull
+        where TArg16 : notnull
+        where TArg17 : notnull
+        where TArg18 : notnull
+        where TArg19 : notnull
+        where TArg20 : notnull
+        where TArg21 : notnull
+        where TArg22 : notnull
+        where TArg23 : notnull
+        where TArg24 : notnull
+        where TArg25 : notnull
+        where TArg26 : notnull
+        where TArg27 : notnull
+        where TArg28 : notnull
+        where TArg29 : notnull
         => scopeRunner.ThenExecuteScope((serviceProvider, context, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithContextWithToken(serviceProvider, context, cancellationToken);
@@ -2239,6 +3730,36 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ConfiguredScopeRunner.ThenExecuteScope" />
     public static ConfiguredScopeRunner ThenExecuteScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25, TArg26, TArg27, TArg28, TArg29, TArg30>(this ConfiguredScopeRunner scopeRunner, DIExecuteScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25, TArg26, TArg27, TArg28, TArg29, TArg30> scopedAction)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
+        where TArg8 : notnull
+        where TArg9 : notnull
+        where TArg10 : notnull
+        where TArg11 : notnull
+        where TArg12 : notnull
+        where TArg13 : notnull
+        where TArg14 : notnull
+        where TArg15 : notnull
+        where TArg16 : notnull
+        where TArg17 : notnull
+        where TArg18 : notnull
+        where TArg19 : notnull
+        where TArg20 : notnull
+        where TArg21 : notnull
+        where TArg22 : notnull
+        where TArg23 : notnull
+        where TArg24 : notnull
+        where TArg25 : notnull
+        where TArg26 : notnull
+        where TArg27 : notnull
+        where TArg28 : notnull
+        where TArg29 : notnull
+        where TArg30 : notnull
         => scopeRunner.ThenExecuteScope((serviceProvider, context, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithContextWithToken(serviceProvider, context, cancellationToken);
@@ -2277,6 +3798,37 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ConfiguredScopeRunner.ThenExecuteScope" />
     public static ConfiguredScopeRunner ThenExecuteScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25, TArg26, TArg27, TArg28, TArg29, TArg30, TArg31>(this ConfiguredScopeRunner scopeRunner, DIExecuteScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25, TArg26, TArg27, TArg28, TArg29, TArg30, TArg31> scopedAction)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
+        where TArg8 : notnull
+        where TArg9 : notnull
+        where TArg10 : notnull
+        where TArg11 : notnull
+        where TArg12 : notnull
+        where TArg13 : notnull
+        where TArg14 : notnull
+        where TArg15 : notnull
+        where TArg16 : notnull
+        where TArg17 : notnull
+        where TArg18 : notnull
+        where TArg19 : notnull
+        where TArg20 : notnull
+        where TArg21 : notnull
+        where TArg22 : notnull
+        where TArg23 : notnull
+        where TArg24 : notnull
+        where TArg25 : notnull
+        where TArg26 : notnull
+        where TArg27 : notnull
+        where TArg28 : notnull
+        where TArg29 : notnull
+        where TArg30 : notnull
+        where TArg31 : notnull
         => scopeRunner.ThenExecuteScope((serviceProvider, context, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithContextWithToken(serviceProvider, context, cancellationToken);
@@ -2316,6 +3868,38 @@ public static partial class ScopeRunnerExtensions
 
     /// <inheritdoc cref="ConfiguredScopeRunner.ThenExecuteScope" />
     public static ConfiguredScopeRunner ThenExecuteScope<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25, TArg26, TArg27, TArg28, TArg29, TArg30, TArg31, TArg32>(this ConfiguredScopeRunner scopeRunner, DIExecuteScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25, TArg26, TArg27, TArg28, TArg29, TArg30, TArg31, TArg32> scopedAction)
+        where TArg1 : notnull
+        where TArg2 : notnull
+        where TArg3 : notnull
+        where TArg4 : notnull
+        where TArg5 : notnull
+        where TArg6 : notnull
+        where TArg7 : notnull
+        where TArg8 : notnull
+        where TArg9 : notnull
+        where TArg10 : notnull
+        where TArg11 : notnull
+        where TArg12 : notnull
+        where TArg13 : notnull
+        where TArg14 : notnull
+        where TArg15 : notnull
+        where TArg16 : notnull
+        where TArg17 : notnull
+        where TArg18 : notnull
+        where TArg19 : notnull
+        where TArg20 : notnull
+        where TArg21 : notnull
+        where TArg22 : notnull
+        where TArg23 : notnull
+        where TArg24 : notnull
+        where TArg25 : notnull
+        where TArg26 : notnull
+        where TArg27 : notnull
+        where TArg28 : notnull
+        where TArg29 : notnull
+        where TArg30 : notnull
+        where TArg31 : notnull
+        where TArg32 : notnull
         => scopeRunner.ThenExecuteScope((serviceProvider, context, cancellationToken) =>
         {
             var arg1 = ArgumentLocator<TArg1>.GetWithContextWithToken(serviceProvider, context, cancellationToken);

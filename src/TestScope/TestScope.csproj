@@ -4,21 +4,57 @@
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <TransformOnBuild>true</TransformOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
   </ItemGroup>
 
+  <!-- File Nesting -->
+  <ItemGroup>
+    <Compile Update="**\*.cs">
+      <DependentUpon>%(Filename).tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <!-- Text Templating -->
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v17.0\TextTemplating\Microsoft.TextTemplating.targets" />
+
   <ItemGroup>
     <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="**\*.cs">
-      <DependentUpon>%(Filename).tt</DependentUpon>
+    <None Update="**\*.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+    </None>
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Compile Update="ScopeRunnerGenericAsyncExtensions.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
+    <Compile Update="ScopeRunnerGenericDelegates.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="ScopeRunnerGenericSyncExtensions.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="ScopeRunnerGenericAsyncExtensions.tt">
+      <LastGenOutput>ScopeRunnerGenericAsyncExtensions.cs</LastGenOutput>
+    </None>
+    <None Update="ScopeRunnerGenericDelegates.tt">
+      <LastGenOutput>ScopeRunnerGenericDelegates.cs</LastGenOutput>
+    </None>
+    <None Update="ScopeRunnerGenericSyncExtensions.tt">
+      <LastGenOutput>ScopeRunnerGenericSyncExtensions.cs</LastGenOutput>
+    </None>
   </ItemGroup>
 
 </Project>

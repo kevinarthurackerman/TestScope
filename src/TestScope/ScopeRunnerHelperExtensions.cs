@@ -5,6 +5,7 @@ namespace TestScope;
 public static partial class ScopeRunnerExtensions
 {
     private static class ArgumentLocator<TArg>
+        where TArg: notnull
     {
         internal static readonly Func<IServiceProvider, TArg> Get;
         internal static readonly Func<IServiceProvider, dynamic, TArg> GetWithContext;
