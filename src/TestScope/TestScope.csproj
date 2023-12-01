@@ -7,6 +7,12 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <PackageVersion>$([System.DateTime]::Now.ToString("yyyy.MM.dd.HHmmss"))</PackageVersion>
+    <PackageOutputPath>./nupkg</PackageOutputPath>
+    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
