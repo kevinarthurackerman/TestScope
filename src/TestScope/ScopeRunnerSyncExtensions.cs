@@ -1,3 +1,5 @@
+using System.Runtime.ExceptionServices;
+
 namespace TestScope;
 
 public static partial class ScopeRunnerExtensions
@@ -5,17 +7,17 @@ public static partial class ScopeRunnerExtensions
     /// <inheritdoc cref="ScopeRunner.ConfigureServices" />
     public static ScopeRunner ConfigureServices(this ScopeRunner scopeRunner, ConfigureServices configure)
         => scopeRunner.ConfigureServices((services, _) =>
-    {
-        configure(services);
-        return ValueTask.CompletedTask;
-    });
+        {
+            configure(services);
+            return default;
+        });
 
     /// <inheritdoc cref="ScopeRunner.ForEachScope" />
     public static ScopeRunner ForEachScope(this ScopeRunner scopeRunner, DIPipelineBehavior behavior)
         => scopeRunner.ForEachScope((_, next, _) =>
         {
             behavior(Next);
-            return ValueTask.CompletedTask;
+            return default;
 
             void Next()
             {
@@ -30,7 +32,7 @@ public static partial class ScopeRunnerExtensions
         => scopeRunner.ForEachScope((serviceProvider, next, _) =>
         {
             behavior(serviceProvider, Next);
-            return ValueTask.CompletedTask;
+            return default;
 
             void Next()
             {
@@ -45,7 +47,7 @@ public static partial class ScopeRunnerExtensions
         => scopeRunner.ExecuteScope((_, _, _) =>
         {
             scopedAction();
-            return ValueTask.CompletedTask;
+            return default;
         });
 
     /// <inheritdoc cref="ScopeRunner.ExecuteScope" />
@@ -53,7 +55,7 @@ public static partial class ScopeRunnerExtensions
         => scopeRunner.ExecuteScope((serviceProvider, context, _) =>
         {
             scopedAction(serviceProvider, context);
-            return ValueTask.CompletedTask;
+            return default;
         });
 
     /// <inheritdoc cref="ConfiguredScopeRunner.ThenExecuteScope" />
@@ -61,7 +63,7 @@ public static partial class ScopeRunnerExtensions
         => scopeRunner.ThenExecuteScope((_, _, _) =>
         {
             scopedAction();
-            return ValueTask.CompletedTask;
+            return default;
         });
 
     /// <inheritdoc cref="ConfiguredScopeRunner.ThenExecuteScope" />
@@ -69,14 +71,29 @@ public static partial class ScopeRunnerExtensions
         => scopeRunner.ThenExecuteScope((serviceProvider, context, _) =>
         {
             scopedAction(serviceProvider, context);
-            return ValueTask.CompletedTask;
+            return default;
         });
 
     /// <inheritdoc cref="ConfiguredScopeRunner.RunAsync" />
     public static void Run(this ConfiguredScopeRunner scopeRunner)
     {
-        var task = scopeRunner.RunAsync();
+        var valueTask = scopeRunner.RunAsync();
+
+        if (valueTask.IsCompletedSuccessfully) return;
+
+        var task = valueTask.AsTask();
+
         if (!task.IsCompleted)
-            task.AsTask().RunSynchronously();
+            task.RunSynchronously();
+
+        if (task.Exception != null)
+        {
+            var exception = task.Exception.Flatten();
+
+            if (exception.InnerExceptions.Count > 1)
+                ExceptionDispatchInfo.Capture(exception).Throw();
+
+            ExceptionDispatchInfo.Capture(exception.InnerException!).Throw();
+        }
     }
 }
