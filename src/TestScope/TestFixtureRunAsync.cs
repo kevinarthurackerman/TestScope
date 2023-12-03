@@ -1,14 +1,4 @@
-﻿
-/* Unmerged change from project 'TestScope (netstandard2.0)'
-Before:
-using System.Threading.Tasks;
-After:
-using System.Threading.Tasks;
-using TestScope;
-using TestScope;
-using TestScope.Testing;
-*/
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 
 namespace TestScope
 {

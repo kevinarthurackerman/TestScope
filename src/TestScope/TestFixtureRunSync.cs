@@ -1,12 +1,4 @@
-﻿/* Unmerged change from project 'TestScope (netstandard2.0)'
-Before:
-namespace TestScope.Testing
-After:
-using TestScope;
-using TestScope;
-using TestScope.Testing
-*/
-namespace TestScope
+﻿namespace TestScope
 {
     public delegate void PreRun(RunOptions options);
 

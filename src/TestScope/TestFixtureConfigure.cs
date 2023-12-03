@@ -1,14 +1,4 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-
-/* Unmerged change from project 'TestScope (netstandard2.0)'
-Before:
-using System.Threading;
-After:
-using System.Threading;
-using TestScope;
-using TestScope;
-using TestScope.Testing;
-*/
 using System.Threading;
 
 namespace TestScope
