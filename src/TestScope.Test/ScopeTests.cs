@@ -1,83 +1,72 @@
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace TestScope.Test;
-
-[TestClass]
-public class ScopeTests
+namespace TestScope.Test
 {
-    [TestMethod]
-    public void ShouldBeTransient() => ScopeRunner.Default
-        .ConfigureServices(sp => sp.AddTransient(_ => new Tuple<Guid>(Guid.NewGuid())))
-        .ExecuteScope((Tuple<Guid> value1, Tuple<Guid> value2) => Assert.AreNotEqual(value1.Item1, value2.Item1))
-        .Run();
-
-    [TestMethod]
-    public void ShouldBeScoped() => ScopeRunner.Default
-        .ConfigureServices(sp => sp.AddScoped(_ => new Tuple<Guid>(Guid.NewGuid())))
-        .ExecuteScope((Tuple<Guid> value1, Tuple<Guid> value2, dynamic context) =>
-        {
-            Assert.AreEqual(value1.Item1, value2.Item1);
-            context.FirstScopeId = value1.Item1;
-        })
-        .ThenExecuteScope((Tuple<Guid> value, dynamic context) => Assert.AreNotEqual(context.FirstScopeId, value.Item1))
-        .Run();
-
-    [TestMethod]
-    public void ShouldBeSingleton() => ScopeRunner.Default
-        .ConfigureServices(sp => sp.AddSingleton(_ => new Tuple<Guid>(Guid.NewGuid())))
-        .ExecuteScope((Tuple<Guid> value1, Tuple<Guid> value2, dynamic context) =>
-        {
-            Assert.AreEqual(value1.Item1, value2.Item1);
-            context.FirstScopeId = value1.Item1;
-        })
-        .ThenExecuteScope((Tuple<Guid> value1, Tuple<Guid> value2, dynamic context) =>
-        {
-            Assert.AreEqual(context.FirstScopeId, value1.Item1);
-            Assert.AreEqual(value1.Item1, value2.Item1);
-            context.FirstScopeId = value1.Item1;
-        })
-        .Run();
-
-    [TestMethod]
-    public async Task ShouldBeTransientAsync()
+    [TestClass]
+    public class ScopeTests
     {
-        await ScopeRunner.Default
-            .ConfigureServices(sp => sp.AddTransient(_ => new Tuple<Guid>(Guid.NewGuid())))
-            .ExecuteScope((Tuple<Guid> value1, Tuple<Guid> value2) => Assert.AreNotEqual(value1.Item1, value2.Item1))
-            .RunAsync();
-    }
+        [TestMethod]
+        public void ShouldBeTransient() => TestFixture.Default
+            .PreConfigure(x => x.ServiceCollection.AddTransient(_ => Id.New))
+            .WithExecute((Id id1, Id id2) => Assert.AreNotEqual(id1, id2))
+            .Run();
 
-    [TestMethod]
-    public async Task ShouldBeScopedAsync()
-    {
-        var result = ScopeRunner.Default
-            .ConfigureServices(sp => sp.AddScoped(_ => new Tuple<Guid>(Guid.NewGuid())))
-            .ExecuteScope((Tuple<Guid> value1, Tuple<Guid> value2, dynamic context) =>
+        [TestMethod]
+        public void ShouldBeScoped() => TestFixture.Default
+            .PreConfigure(x => x.ServiceCollection.AddScoped(_ => Id.New))
+            .WithExecute((Id id1, Id id2, dynamic context) =>
             {
-                Assert.AreEqual(value1.Item1, value2.Item1);
-                context.FirstScopeId = value1.Item1;
+                Assert.AreEqual(id1, id2);
+                context.FirstScopeId = id1;
             })
-            .ThenExecuteScope((Tuple<Guid> value, dynamic context) => Assert.AreNotEqual(context.FirstScopeId, value.Item1))
+            .WithExecute((Id id, dynamic context) => Assert.AreNotEqual(context.FirstScopeId, id))
+            .Run();
+
+        [TestMethod]
+        public void ShouldBeSingleton() => TestFixture.Default
+            .PreConfigure(x => x.ServiceCollection.AddSingleton(_ => Id.New))
+            .WithExecute((Id id1, Id id2, dynamic context) =>
+            {
+                Assert.AreEqual(id1, id2);
+                context.FirstScopeId = id1;
+            })
+            .WithExecute((Id id1, Id id2, dynamic context) =>
+            {
+                Assert.AreEqual(context.FirstScopeId, id1);
+                Assert.AreEqual(id1, id2);
+            })
+            .Run();
+
+        [TestMethod]
+        public Task ShouldBeTransientAsync() => TestFixture.Default
+            .PreConfigure(x => x.ServiceCollection.AddTransient(_ => Id.New))
+            .WithExecute((Id id1, Id id2) => Assert.AreNotEqual(id1, id2))
             .RunAsync();
 
-        await result;
-    }
-
-    [TestMethod]
-    public async Task ShouldBeSingletonAsync()
-    {
-        await ScopeRunner.Default
-            .ConfigureServices(sp => sp.AddSingleton(_ => new Tuple<Guid>(Guid.NewGuid())))
-            .ExecuteScope((Tuple<Guid> value1, Tuple<Guid> value2, dynamic context) =>
+        [TestMethod]
+        public Task ShouldBeScopedAsync() => TestFixture.Default
+            .PreConfigure(x => x.ServiceCollection.AddScoped(_ => Id.New))
+            .WithExecute((Id id1, Id id2, dynamic context) =>
             {
-                Assert.AreEqual(value1.Item1, value2.Item1);
-                context.FirstScopeId = value1.Item1;
+                Assert.AreEqual(id1, id2);
+                context.FirstScopeId = id1;
             })
-            .ThenExecuteScope((Tuple<Guid> value1, Tuple<Guid> value2, dynamic context) =>
+            .WithExecute((Id id, dynamic context) => Assert.AreNotEqual(context.FirstScopeId, id))
+            .RunAsync();
+
+        [TestMethod]
+        public Task ShouldBeSingletonAsync() => TestFixture.Default
+            .PreConfigure(x => x.ServiceCollection.AddSingleton(_ => Id.New))
+            .WithExecute((Id id1, Id id2, dynamic context) =>
             {
-                Assert.AreEqual(context.FirstScopeId, value1.Item1);
-                Assert.AreEqual(value1.Item1, value2.Item1);
-                context.FirstScopeId = value1.Item1;
+                Assert.AreEqual(id1, id2);
+                context.FirstScopeId = id1;
+            })
+            .WithExecute((Id id1, Id id2, dynamic context) =>
+            {
+                Assert.AreEqual(context.FirstScopeId, id1);
+                Assert.AreEqual(id1, id2);
             })
             .RunAsync();
     }

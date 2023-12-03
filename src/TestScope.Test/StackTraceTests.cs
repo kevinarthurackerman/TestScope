@@ -1,60 +1,56 @@
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Runtime.CompilerServices;
 
-namespace TestScope.Test;
-
-[TestClass]
-public class StackTraceTests
+namespace TestScope.Test
 {
-    [TestMethod]
-    public void ShouldHaveStackTraceWhenRanSynchronously()
+    [TestClass]
+    public class StackTraceTests
     {
-        try
+        [TestMethod]
+        public void ShouldHaveStackTraceWhenRanSynchronously()
         {
-            ScopeRunner.Default
-                .ExecuteScope(() =>
-                {
-                    throw new InvalidOperationException("Test");
-                })
-                .Run();
+            try
+            {
+                TestFixture.Default
+                    .WithExecute(() => throw new InvalidOperationException("Test"))
+                    .Run();
+            }
+            catch (Exception ex)
+            {
+                Assert.IsInstanceOfType(ex, typeof(InvalidOperationException));
+
+                var stackTraceFirstLine = ex.StackTrace!.Split(Environment.NewLine, 2)[0];
+
+                var expected = $@"   at {GetFixtureName()}.<>c.<{GetTestName()}>b__0_0() in {GetFilePath()}:line {GetLineNumber() - 9}";
+
+                Assert.AreEqual(expected, stackTraceFirstLine);
+            }
         }
-        catch(Exception ex)
+
+        [TestMethod]
+        public async Task ShouldHaveStackTraceWhenRanAsynchronously()
         {
-            Assert.IsInstanceOfType(ex, typeof(InvalidOperationException));
+            try
+            {
+                await TestFixture.Default
+                    .WithExecute(() => throw new InvalidOperationException("Test"))
+                    .RunAsync();
+            }
+            catch (Exception ex)
+            {
+                Assert.IsInstanceOfType(ex, typeof(InvalidOperationException));
 
-            var stackTraceFirstLine = ex.StackTrace!.Split(Environment.NewLine, 2)[0];
+                var stackTraceFirstLine = ex.StackTrace!.Split(Environment.NewLine, 2)[0];
 
-            var expected = $@"   at {GetFixtureName()}.<>c.<{GetTestName()}>b__0_0() in {GetFilePath()}:line {GetLineNumber() - 10}";
+                var expected = $@"   at {GetFixtureName()}.<>c.<{GetTestName()}>b__1_0() in {GetFilePath()}:line {GetLineNumber() - 9}";
 
-            Assert.AreEqual(expected, stackTraceFirstLine);
+                Assert.AreEqual(expected, stackTraceFirstLine);
+            }
         }
+
+        private string GetFilePath([CallerFilePath] string? callerFilePath = null) => callerFilePath!;
+        private string GetFixtureName() => GetType().FullName!;
+        private string GetTestName([CallerMemberName] string? callerMemberName = null) => callerMemberName!;
+        private int GetLineNumber([CallerLineNumber] int? callerLineNumber = null) => callerLineNumber!.Value;
     }
-
-    [TestMethod]
-    public async Task ShouldHaveStackTraceWhenRanAsynchronously()
-    {
-        try
-        {
-            await ScopeRunner.Default
-                .ExecuteScope(() =>
-                {
-                    throw new InvalidOperationException("Test");
-                })
-                .RunAsync();
-        }
-        catch(Exception ex)
-        {
-            Assert.IsInstanceOfType(ex, typeof(InvalidOperationException));
-
-            var stackTraceFirstLine = ex.StackTrace!.Split(Environment.NewLine, 2)[0];
-
-            var expected = $@"   at {GetFixtureName()}.<>c.<{GetTestName()}>b__1_0() in {GetFilePath()}:line {GetLineNumber() - 10}";
-
-            Assert.AreEqual(expected, stackTraceFirstLine);
-        }
-    }
-
-    private string GetFilePath([CallerFilePath] string? callerFilePath = null) => callerFilePath!;
-    private string GetFixtureName() => GetType().FullName!;
-    private string GetTestName([CallerMemberName] string? callerMemberName = null) => callerMemberName!;
-    private int GetLineNumber([CallerLineNumber] int? callerLineNumber = null) => callerLineNumber!.Value;
 }

@@ -13,14 +13,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="TestFixtureExecuteExtSync.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>TestFixtureExecuteExtSync.tt</DependentUpon>
-    </None>
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
   </ItemGroup>
@@ -44,20 +36,39 @@
       <Generator>TextTemplatingFileGenerator</Generator>
     </None>
   </ItemGroup>
-
+  
   <ItemGroup>
-    <Compile Update="TestFixtureExecuteExtAsync.cs">
+    <Compile Update="ScopeRunnerGenericAsyncExtensions.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="ScopeRunnerGenericDelegates.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="ScopeRunnerGenericSyncExtensions.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
   </ItemGroup>
-  
+
   <ItemGroup>
-    <None Update="TestFixtureExecuteExtAsync.tt">
-      <LastGenOutput>TestFixtureExecuteExtAsync.cs</LastGenOutput>
+    <None Update="ScopeRunnerGenericAsyncExtensions.tt">
+      <LastGenOutput>ScopeRunnerGenericAsyncExtensions.cs</LastGenOutput>
     </None>
-    <None Update="TestFixtureExecuteExtSync.tt">
-      <LastGenOutput>TestFixtureExecuteExtSync.cs</LastGenOutput>
+    <None Update="ScopeRunnerGenericDelegates.tt">
+      <LastGenOutput>ScopeRunnerGenericDelegates.cs</LastGenOutput>
+    </None>
+    <None Update="ScopeRunnerGenericSyncExtensions.tt">
+      <LastGenOutput>ScopeRunnerGenericSyncExtensions.cs</LastGenOutput>
+    </None>
+    <None Update="Testing\TestFixtureExecuteExtensions.tt">
+      <LastGenOutput>TestFixtureExecuteExtensions.txt</LastGenOutput>
+    </None>
+    <None Update="Testing\TestFixtureExecuteExtensions.txt">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>TestFixtureExecuteExtensions.tt</DependentUpon>
     </None>
   </ItemGroup>
 

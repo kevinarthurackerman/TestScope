@@ -1,0 +1,43 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ output extension=".cs" #>
+<#
+    var maxargs = 32;
+#>
+using System.Threading.Tasks;
+
+namespace TestScope
+{
+    public delegate ValueTask ExecuteAsyncExt();
+
+<# for (var i = 1; i <= maxargs; i++)
+{
+  var argTypes = String.Join(", ", Enumerable.Range(1,i).Select(x => $"in TArg{x}"));
+  var arguments = String.Join(", ", Enumerable.Range(1,i).Select(x => $"TArg{x} arg{x}"));
+#>
+    public delegate ValueTask ExecuteAsyncExt<<#= argTypes #>>(<#= arguments #>);
+
+<# } #>
+    public static class TestFixtureExecuteExtAsyncExtensions
+    {
+        public static TestFixture WithExecuteAsync(this TestFixture testFixture, ExecuteAsyncExt execute)
+            => testFixture.WithExecuteAsync(_ => default);
+
+<# for (var i = 1; i <= maxargs; i++)
+{
+  var argTypes = String.Join(", ", Enumerable.Range(1,i).Select(x => $"TArg{x}"));
+  var argVariables = String.Join(", ", Enumerable.Range(1,i).Select(x => $"arg{x}"));
+#>
+        public static TestFixture WithExecuteAsync<<#= argTypes #>>(this TestFixture testFixture, ExecuteAsyncExt<<#= argTypes #>> execute)
+            => testFixture.WithExecuteAsync(options =>
+            {
+<# for (var j = 1; j <= i; j++) { #>
+                var arg<#= j #> = ArgLocator<TArg<#= j #>>.Get(options);
+<# } #>
+
+                return execute.Invoke(<#= argVariables #>);
+            });
+<# } #>
+    }
+}
