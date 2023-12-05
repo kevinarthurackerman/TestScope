@@ -3,13 +3,13 @@
 <#@ import namespace="System.Linq" #>
 <#@ output extension=".cs" #>
 <#
-    var maxargs = 32;
+    var maxArgs = 32;
 #>
 using System.Threading.Tasks;
 
 namespace TestScope
 {
-<# for (var i = 1; i <= maxargs; i++)
+<# for (var i = 1; i <= maxArgs; i++)
 {
   var argTypes = String.Join(", ", Enumerable.Range(1,i).Select(x => $"in TArg{x}"));
   var arguments = String.Join(", ", Enumerable.Range(1,i).Select(x => $"TArg{x} arg{x}"));
@@ -19,7 +19,7 @@ namespace TestScope
 <# } #>
     public static class OnScopeAsyncExtExtensions
     {
-<# for (var i = 1; i <= maxargs; i++)
+<# for (var i = 1; i <= maxArgs; i++)
 {
   var argTypes = String.Join(", ", Enumerable.Range(1,i).Select(x => $"TArg{x}"));
   var argVariables = String.Join(", ", Enumerable.Range(1,i).Select(x => $"arg{x}"));
