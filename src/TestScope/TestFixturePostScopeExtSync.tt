@@ -7,23 +7,24 @@
 #>
 namespace TestScope
 {
-    public delegate void ExecuteExt();
+    public delegate void PostScopeExt();
 
 <# for (var i = 1; i <= maxargs; i++)
 {
   var argTypes = String.Join(", ", Enumerable.Range(1,i).Select(x => $"in TArg{x}"));
   var arguments = String.Join(", ", Enumerable.Range(1,i).Select(x => $"TArg{x} arg{x}"));
 #>
-    public delegate void ExecuteExt<<#= argTypes #>>(<#= arguments #>);
+    public delegate void PostScopeExt<<#= argTypes #>>(<#= arguments #>);
 
 <# } #>
-    public static class TestFixtureExecuteExtSyncExtensions
+    public static class TestFixturePostScopeExtSyncExtensions
     {
-        public static TestFixture WithExecute(this TestFixture testFixture, ExecuteExt execute)
-            => testFixture.WithExecuteAsync(_ =>
+        public static TestFixture PostScope(this TestFixture testFixture, PostScopeExt postScope)
+            => testFixture.OnScopeAsync(async options =>
             {
-                execute.Invoke();
-                return default;
+                await options.NextAsync();
+
+                postScope.Invoke();
             });
 
 <# for (var i = 1; i <= maxargs; i++)
@@ -31,16 +32,16 @@ namespace TestScope
   var argTypes = String.Join(", ", Enumerable.Range(1,i).Select(x => $"TArg{x}"));
   var argVariables = String.Join(", ", Enumerable.Range(1,i).Select(x => $"arg{x}"));
 #>
-        public static TestFixture WithExecute<<#= argTypes #>>(this TestFixture testFixture, ExecuteExt<<#= argTypes #>> execute)
-            => testFixture.WithExecuteAsync(options =>
+        public static TestFixture PostScope<<#= argTypes #>>(this TestFixture testFixture, PostScopeExt<<#= argTypes #>> postScope)
+            => testFixture.PostScopeAsync(async options =>
             {
 <# for (var j = 1; j <= i; j++) { #>
-                var arg<#= j #> = ExecuteArgLocator<TArg<#= j #>>.Get(options);
+                var arg<#= j #> = ScopeArgLocator<TArg<#= j #>>.Get(options);
 <# } #>
 
-                execute.Invoke(<#= argVariables #>);
-                
-                return default;
+                await options.NextAsync();
+
+                postScope.Invoke(<#= argVariables #>);
             });
 
 <# } #>

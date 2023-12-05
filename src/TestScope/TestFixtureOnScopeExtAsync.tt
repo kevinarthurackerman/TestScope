@@ -9,35 +9,31 @@ using System.Threading.Tasks;
 
 namespace TestScope
 {
-    public delegate ValueTask ExecuteAsyncExt();
-
 <# for (var i = 1; i <= maxargs; i++)
 {
   var argTypes = String.Join(", ", Enumerable.Range(1,i).Select(x => $"in TArg{x}"));
   var arguments = String.Join(", ", Enumerable.Range(1,i).Select(x => $"TArg{x} arg{x}"));
 #>
-    public delegate ValueTask ExecuteAsyncExt<<#= argTypes #>>(<#= arguments #>);
+    public delegate ValueTask OnScopeAsyncExt<<#= argTypes #>>(<#= arguments #>);
 
 <# } #>
-    public static class TestFixtureExecuteExtAsyncExtensions
+    public static class TestFixtureOnScopeExtAsyncExtensions
     {
-        public static TestFixture WithExecuteAsync(this TestFixture testFixture, ExecuteAsyncExt execute)
-            => testFixture.WithExecuteAsync(_ => default);
-
 <# for (var i = 1; i <= maxargs; i++)
 {
   var argTypes = String.Join(", ", Enumerable.Range(1,i).Select(x => $"TArg{x}"));
   var argVariables = String.Join(", ", Enumerable.Range(1,i).Select(x => $"arg{x}"));
 #>
-        public static TestFixture WithExecuteAsync<<#= argTypes #>>(this TestFixture testFixture, ExecuteAsyncExt<<#= argTypes #>> execute)
-            => testFixture.WithExecuteAsync(options =>
+        public static TestFixture OnScopeAsync<<#= argTypes #>>(this TestFixture testFixture, OnScopeAsyncExt<<#= argTypes #>> scopeBehavior)
+            => testFixture.OnScopeAsync(options =>
             {
 <# for (var j = 1; j <= i; j++) { #>
-                var arg<#= j #> = ExecuteArgLocator<TArg<#= j #>>.Get(options);
+                var arg<#= j #> = ScopeArgLocator<TArg<#= j #>>.Get(options);
 <# } #>
 
-                return execute.Invoke(<#= argVariables #>);
+                return scopeBehavior.Invoke(<#= argVariables #>);
             });
+
 <# } #>
     }
 }
