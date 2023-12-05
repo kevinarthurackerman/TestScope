@@ -21,35 +21,20 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="TestFixturePostScopeExtAsync.cs">
-      <DependentUpon>TestFixturePostScopeExtAsync.tt</DependentUpon>
+    <None Include="OnScopeAsyncExt.cs">
+      <DependentUpon>OnScopeAsyncExt.tt</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </None>
-    <None Include="TestFixtureOnScopeExtAsync.cs">
-      <DependentUpon>TestFixtureOnScopeExtAsync.tt</DependentUpon>
+    <None Include="PreScopeSyncExt.cs">
+      <DependentUpon>PreScopeSyncExt.tt</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </None>
-    <None Include="TestFixturePreScopeExtAsync.cs">
-      <DependentUpon>TestFixturePreScopeExtAsync.tt</DependentUpon>
+    <None Include="ExecuteSyncExt.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-    </None>
-    <None Include="TestFixturePreScopeExtSync.cs">
-      <DependentUpon>TestFixturePreScopeExtSync.tt</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </None>
-    <None Include="TestFixturePostScopeExtSync.cs">
-      <DependentUpon>TestFixturePostScopeExtSync.tt</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </None>
-    <None Include="TestFixtureExecuteExtSync.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>TestFixtureExecuteExtSync.tt</DependentUpon>
+      <DependentUpon>ExecuteSyncExt.tt</DependentUpon>
     </None>
   </ItemGroup>
 
@@ -79,11 +64,32 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="TestFixtureExecuteExtAsync.cs">
+    <Compile Update="ExecuteAsyncExt.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ExecuteAsyncExt.tt</DependentUpon>
+    </Compile>
+    <Compile Update="ExecuteSyncExt.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="OnScopeAsyncExt.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="PreScopeSyncExt.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
     <Compile Update="TestFixtureExecuteExtSync.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="TestFixtureExecuteSyncExt.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="TestFixtureOnScopeAsyncExt.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
@@ -95,11 +101,26 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
+    <Compile Update="PostScopeAsyncExt.cs">
+      <DependentUpon>PostScopeAsyncExt.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
     <Compile Update="TestFixturePostScopeExtAsync.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
     <Compile Update="TestFixturePostScopeExtSync.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="PostScopeSyncExt.cs">
+      <DependentUpon>PostScopeSyncExt.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="PreScopeAsyncExt.cs">
+      <DependentUpon>PreScopeAsyncExt.tt</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
@@ -111,29 +132,42 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
+    <Compile Update="TestFixturePreScopeSyncExt.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
   </ItemGroup>
   
   <ItemGroup>
-    <None Update="TestFixtureExecuteExtAsync.tt">
-      <LastGenOutput>TestFixtureExecuteExtAsync.cs</LastGenOutput>
+    <None Update="ExecuteAsyncExt.tt">
+      <LastGenOutput>ExecuteAsyncExt.cs</LastGenOutput>
+    </None>
+    <None Update="PostScopeAsyncExt.tt">
+      <LastGenOutput>PostScopeAsyncExt.cs</LastGenOutput>
+    </None>
+    <None Update="PostScopeSyncExt.tt">
+      <LastGenOutput>PostScopeSyncExt.cs</LastGenOutput>
+    </None>
+    <None Update="PreScopeAsyncExt.tt">
+      <LastGenOutput>PreScopeAsyncExt.cs</LastGenOutput>
     </None>
     <None Update="TestFixturePostScopeExtAsync.tt">
       <LastGenOutput>TestFixturePostScopeExtAsync.cs</LastGenOutput>
     </None>
-    <None Update="TestFixtureOnScopeExtAsync.tt">
-      <LastGenOutput>TestFixtureOnScopeExtAsync.cs</LastGenOutput>
+    <None Update="OnScopeAsyncExt.tt">
+      <LastGenOutput>OnScopeAsyncExt.cs</LastGenOutput>
     </None>
     <None Update="TestFixturePreScopeExtAsync.tt">
       <LastGenOutput>TestFixturePreScopeExtAsync.cs</LastGenOutput>
     </None>
-    <None Update="TestFixturePreScopeExtSync.tt">
-      <LastGenOutput>TestFixturePreScopeExtSync.cs</LastGenOutput>
+    <None Update="PreScopeSyncExt.tt">
+      <LastGenOutput>PreScopeSyncExt.cs</LastGenOutput>
     </None>
     <None Update="TestFixturePostScopeExtSync.tt">
       <LastGenOutput>TestFixturePostScopeExtSync.cs</LastGenOutput>
     </None>
-    <None Update="TestFixtureExecuteExtSync.tt">
-      <LastGenOutput>TestFixtureExecuteExtSync.cs</LastGenOutput>
+    <None Update="ExecuteSyncExt.tt">
+      <LastGenOutput>ExecuteSyncExt.cs</LastGenOutput>
     </None>
   </ItemGroup>
 

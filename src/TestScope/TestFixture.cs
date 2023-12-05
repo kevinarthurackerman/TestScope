@@ -40,36 +40,36 @@ namespace TestScope
             _cachedConfiguration = cachedContext;
         }
 
-        public TestFixture OnConfigureAsync(OnConfigureAsync configureBehavior)
+        public TestFixture OnConfigureAsync(OnConfigureAsync action)
             => new TestFixture(
-              Append(_onConfigures, configureBehavior),
+              Append(_onConfigures, action),
               _onRuns,
               _onScopes,
               _executes,
               new Ref<Configuration>());
 
-        public TestFixture OnRunAsync(OnRunAsync runBehavior)
+        public TestFixture OnRunAsync(OnRunAsync action)
             => new TestFixture(
                _onConfigures,
-               Append(_onRuns, runBehavior),
+               Append(_onRuns, action),
                _onScopes,
                _executes,
                _cachedConfiguration);
 
-        public TestFixture OnScopeAsync(OnScopeAsync scopeBehavior)
+        public TestFixture OnScopeAsync(OnScopeAsync action)
             => new TestFixture(
                _onConfigures,
                _onRuns,
-               Append(_onScopes, scopeBehavior),
+               Append(_onScopes, action),
                _executes,
                _cachedConfiguration);
 
-        public TestFixture WithExecuteAsync(ExecuteAsync execute)
+        public TestFixture WithExecuteAsync(ExecuteAsync action)
             => new TestFixture(
                _onConfigures,
                _onRuns,
                _onScopes,
-               Append(_executes, execute),
+               Append(_executes, action),
                _cachedConfiguration);
 
         public void Run()

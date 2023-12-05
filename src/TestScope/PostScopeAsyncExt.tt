@@ -1,0 +1,51 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ output extension=".cs" #>
+<#
+    var maxargs = 32;
+#>
+using System.Threading.Tasks;
+
+namespace TestScope
+{
+    public delegate ValueTask PostScopeAsyncExt();
+
+<# for (var i = 1; i <= maxargs; i++)
+{
+  var argTypes = String.Join(", ", Enumerable.Range(1,i).Select(x => $"in TArg{x}"));
+  var arguments = String.Join(", ", Enumerable.Range(1,i).Select(x => $"TArg{x} arg{x}"));
+#>
+    public delegate ValueTask PostScopeAsyncExt<<#= argTypes #>>(<#= arguments #>);
+
+<# } #>
+    public static class PostScopeAsyncExtExtensions
+    {
+        public static TestFixture PostScopeAsync(this TestFixture testFixture, PostScopeAsyncExt action)
+            => testFixture.OnScopeAsync(async options =>
+            {
+                await options.NextAsync();
+
+                await action.Invoke();
+            });
+
+<# for (var i = 1; i <= maxargs; i++)
+{
+  var argTypes = String.Join(", ", Enumerable.Range(1,i).Select(x => $"TArg{x}"));
+  var argVariables = String.Join(", ", Enumerable.Range(1,i).Select(x => $"arg{x}"));
+#>
+        public static TestFixture PostScopeAsync<<#= argTypes #>>(this TestFixture testFixture, PostScopeAsyncExt<<#= argTypes #>> action)
+            => testFixture.PostScopeAsync(async options =>
+            {
+<# for (var j = 1; j <= i; j++) { #>
+                var arg<#= j #> = ScopeArgLocator<TArg<#= j #>>.Get(options);
+<# } #>
+
+                await options.NextAsync();
+
+                await action.Invoke(<#= argVariables #>);
+            });
+
+<# } #>
+    }
+}

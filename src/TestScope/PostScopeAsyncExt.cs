@@ -68,27 +68,27 @@ namespace TestScope
 
     public delegate ValueTask PostScopeAsyncExt<in TArg1, in TArg2, in TArg3, in TArg4, in TArg5, in TArg6, in TArg7, in TArg8, in TArg9, in TArg10, in TArg11, in TArg12, in TArg13, in TArg14, in TArg15, in TArg16, in TArg17, in TArg18, in TArg19, in TArg20, in TArg21, in TArg22, in TArg23, in TArg24, in TArg25, in TArg26, in TArg27, in TArg28, in TArg29, in TArg30, in TArg31, in TArg32>(TArg1 arg1, TArg2 arg2, TArg3 arg3, TArg4 arg4, TArg5 arg5, TArg6 arg6, TArg7 arg7, TArg8 arg8, TArg9 arg9, TArg10 arg10, TArg11 arg11, TArg12 arg12, TArg13 arg13, TArg14 arg14, TArg15 arg15, TArg16 arg16, TArg17 arg17, TArg18 arg18, TArg19 arg19, TArg20 arg20, TArg21 arg21, TArg22 arg22, TArg23 arg23, TArg24 arg24, TArg25 arg25, TArg26 arg26, TArg27 arg27, TArg28 arg28, TArg29 arg29, TArg30 arg30, TArg31 arg31, TArg32 arg32);
 
-    public static class TestFixturePostScopeExtAsyncExtensions
+    public static class PostScopeAsyncExtExtensions
     {
-        public static TestFixture PostScopeAsync(this TestFixture testFixture, PostScopeAsyncExt postScope)
+        public static TestFixture PostScopeAsync(this TestFixture testFixture, PostScopeAsyncExt action)
             => testFixture.OnScopeAsync(async options =>
             {
                 await options.NextAsync();
 
-                await postScope.Invoke();
+                await action.Invoke();
             });
 
-        public static TestFixture PostScopeAsync<TArg1>(this TestFixture testFixture, PostScopeAsyncExt<TArg1> postScope)
+        public static TestFixture PostScopeAsync<TArg1>(this TestFixture testFixture, PostScopeAsyncExt<TArg1> action)
             => testFixture.PostScopeAsync(async options =>
             {
                 var arg1 = ScopeArgLocator<TArg1>.Get(options);
 
                 await options.NextAsync();
 
-                await postScope.Invoke(arg1);
+                await action.Invoke(arg1);
             });
 
-        public static TestFixture PostScopeAsync<TArg1, TArg2>(this TestFixture testFixture, PostScopeAsyncExt<TArg1, TArg2> postScope)
+        public static TestFixture PostScopeAsync<TArg1, TArg2>(this TestFixture testFixture, PostScopeAsyncExt<TArg1, TArg2> action)
             => testFixture.PostScopeAsync(async options =>
             {
                 var arg1 = ScopeArgLocator<TArg1>.Get(options);
@@ -96,10 +96,10 @@ namespace TestScope
 
                 await options.NextAsync();
 
-                await postScope.Invoke(arg1, arg2);
+                await action.Invoke(arg1, arg2);
             });
 
-        public static TestFixture PostScopeAsync<TArg1, TArg2, TArg3>(this TestFixture testFixture, PostScopeAsyncExt<TArg1, TArg2, TArg3> postScope)
+        public static TestFixture PostScopeAsync<TArg1, TArg2, TArg3>(this TestFixture testFixture, PostScopeAsyncExt<TArg1, TArg2, TArg3> action)
             => testFixture.PostScopeAsync(async options =>
             {
                 var arg1 = ScopeArgLocator<TArg1>.Get(options);
@@ -108,10 +108,10 @@ namespace TestScope
 
                 await options.NextAsync();
 
-                await postScope.Invoke(arg1, arg2, arg3);
+                await action.Invoke(arg1, arg2, arg3);
             });
 
-        public static TestFixture PostScopeAsync<TArg1, TArg2, TArg3, TArg4>(this TestFixture testFixture, PostScopeAsyncExt<TArg1, TArg2, TArg3, TArg4> postScope)
+        public static TestFixture PostScopeAsync<TArg1, TArg2, TArg3, TArg4>(this TestFixture testFixture, PostScopeAsyncExt<TArg1, TArg2, TArg3, TArg4> action)
             => testFixture.PostScopeAsync(async options =>
             {
                 var arg1 = ScopeArgLocator<TArg1>.Get(options);
@@ -121,10 +121,10 @@ namespace TestScope
 
                 await options.NextAsync();
 
-                await postScope.Invoke(arg1, arg2, arg3, arg4);
+                await action.Invoke(arg1, arg2, arg3, arg4);
             });
 
-        public static TestFixture PostScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5>(this TestFixture testFixture, PostScopeAsyncExt<TArg1, TArg2, TArg3, TArg4, TArg5> postScope)
+        public static TestFixture PostScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5>(this TestFixture testFixture, PostScopeAsyncExt<TArg1, TArg2, TArg3, TArg4, TArg5> action)
             => testFixture.PostScopeAsync(async options =>
             {
                 var arg1 = ScopeArgLocator<TArg1>.Get(options);
@@ -135,10 +135,10 @@ namespace TestScope
 
                 await options.NextAsync();
 
-                await postScope.Invoke(arg1, arg2, arg3, arg4, arg5);
+                await action.Invoke(arg1, arg2, arg3, arg4, arg5);
             });
 
-        public static TestFixture PostScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6>(this TestFixture testFixture, PostScopeAsyncExt<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6> postScope)
+        public static TestFixture PostScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6>(this TestFixture testFixture, PostScopeAsyncExt<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6> action)
             => testFixture.PostScopeAsync(async options =>
             {
                 var arg1 = ScopeArgLocator<TArg1>.Get(options);
@@ -150,10 +150,10 @@ namespace TestScope
 
                 await options.NextAsync();
 
-                await postScope.Invoke(arg1, arg2, arg3, arg4, arg5, arg6);
+                await action.Invoke(arg1, arg2, arg3, arg4, arg5, arg6);
             });
 
-        public static TestFixture PostScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7>(this TestFixture testFixture, PostScopeAsyncExt<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7> postScope)
+        public static TestFixture PostScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7>(this TestFixture testFixture, PostScopeAsyncExt<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7> action)
             => testFixture.PostScopeAsync(async options =>
             {
                 var arg1 = ScopeArgLocator<TArg1>.Get(options);
@@ -166,10 +166,10 @@ namespace TestScope
 
                 await options.NextAsync();
 
-                await postScope.Invoke(arg1, arg2, arg3, arg4, arg5, arg6, arg7);
+                await action.Invoke(arg1, arg2, arg3, arg4, arg5, arg6, arg7);
             });
 
-        public static TestFixture PostScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8>(this TestFixture testFixture, PostScopeAsyncExt<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8> postScope)
+        public static TestFixture PostScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8>(this TestFixture testFixture, PostScopeAsyncExt<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8> action)
             => testFixture.PostScopeAsync(async options =>
             {
                 var arg1 = ScopeArgLocator<TArg1>.Get(options);
@@ -183,10 +183,10 @@ namespace TestScope
 
                 await options.NextAsync();
 
-                await postScope.Invoke(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
+                await action.Invoke(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
             });
 
-        public static TestFixture PostScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9>(this TestFixture testFixture, PostScopeAsyncExt<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9> postScope)
+        public static TestFixture PostScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9>(this TestFixture testFixture, PostScopeAsyncExt<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9> action)
             => testFixture.PostScopeAsync(async options =>
             {
                 var arg1 = ScopeArgLocator<TArg1>.Get(options);
@@ -201,10 +201,10 @@ namespace TestScope
 
                 await options.NextAsync();
 
-                await postScope.Invoke(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
+                await action.Invoke(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
             });
 
-        public static TestFixture PostScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10>(this TestFixture testFixture, PostScopeAsyncExt<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10> postScope)
+        public static TestFixture PostScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10>(this TestFixture testFixture, PostScopeAsyncExt<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10> action)
             => testFixture.PostScopeAsync(async options =>
             {
                 var arg1 = ScopeArgLocator<TArg1>.Get(options);
@@ -220,10 +220,10 @@ namespace TestScope
 
                 await options.NextAsync();
 
-                await postScope.Invoke(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
+                await action.Invoke(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
             });
 
-        public static TestFixture PostScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11>(this TestFixture testFixture, PostScopeAsyncExt<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11> postScope)
+        public static TestFixture PostScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11>(this TestFixture testFixture, PostScopeAsyncExt<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11> action)
             => testFixture.PostScopeAsync(async options =>
             {
                 var arg1 = ScopeArgLocator<TArg1>.Get(options);
@@ -240,10 +240,10 @@ namespace TestScope
 
                 await options.NextAsync();
 
-                await postScope.Invoke(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11);
+                await action.Invoke(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11);
             });
 
-        public static TestFixture PostScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12>(this TestFixture testFixture, PostScopeAsyncExt<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12> postScope)
+        public static TestFixture PostScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12>(this TestFixture testFixture, PostScopeAsyncExt<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12> action)
             => testFixture.PostScopeAsync(async options =>
             {
                 var arg1 = ScopeArgLocator<TArg1>.Get(options);
@@ -261,10 +261,10 @@ namespace TestScope
 
                 await options.NextAsync();
 
-                await postScope.Invoke(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12);
+                await action.Invoke(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12);
             });
 
-        public static TestFixture PostScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13>(this TestFixture testFixture, PostScopeAsyncExt<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13> postScope)
+        public static TestFixture PostScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13>(this TestFixture testFixture, PostScopeAsyncExt<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13> action)
             => testFixture.PostScopeAsync(async options =>
             {
                 var arg1 = ScopeArgLocator<TArg1>.Get(options);
@@ -283,10 +283,10 @@ namespace TestScope
 
                 await options.NextAsync();
 
-                await postScope.Invoke(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13);
+                await action.Invoke(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13);
             });
 
-        public static TestFixture PostScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14>(this TestFixture testFixture, PostScopeAsyncExt<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14> postScope)
+        public static TestFixture PostScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14>(this TestFixture testFixture, PostScopeAsyncExt<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14> action)
             => testFixture.PostScopeAsync(async options =>
             {
                 var arg1 = ScopeArgLocator<TArg1>.Get(options);
@@ -306,10 +306,10 @@ namespace TestScope
 
                 await options.NextAsync();
 
-                await postScope.Invoke(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14);
+                await action.Invoke(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14);
             });
 
-        public static TestFixture PostScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15>(this TestFixture testFixture, PostScopeAsyncExt<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15> postScope)
+        public static TestFixture PostScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15>(this TestFixture testFixture, PostScopeAsyncExt<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15> action)
             => testFixture.PostScopeAsync(async options =>
             {
                 var arg1 = ScopeArgLocator<TArg1>.Get(options);
@@ -330,10 +330,10 @@ namespace TestScope
 
                 await options.NextAsync();
 
-                await postScope.Invoke(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15);
+                await action.Invoke(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15);
             });
 
-        public static TestFixture PostScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16>(this TestFixture testFixture, PostScopeAsyncExt<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16> postScope)
+        public static TestFixture PostScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16>(this TestFixture testFixture, PostScopeAsyncExt<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16> action)
             => testFixture.PostScopeAsync(async options =>
             {
                 var arg1 = ScopeArgLocator<TArg1>.Get(options);
@@ -355,10 +355,10 @@ namespace TestScope
 
                 await options.NextAsync();
 
-                await postScope.Invoke(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16);
+                await action.Invoke(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16);
             });
 
-        public static TestFixture PostScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17>(this TestFixture testFixture, PostScopeAsyncExt<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17> postScope)
+        public static TestFixture PostScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17>(this TestFixture testFixture, PostScopeAsyncExt<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17> action)
             => testFixture.PostScopeAsync(async options =>
             {
                 var arg1 = ScopeArgLocator<TArg1>.Get(options);
@@ -381,10 +381,10 @@ namespace TestScope
 
                 await options.NextAsync();
 
-                await postScope.Invoke(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17);
+                await action.Invoke(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17);
             });
 
-        public static TestFixture PostScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18>(this TestFixture testFixture, PostScopeAsyncExt<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18> postScope)
+        public static TestFixture PostScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18>(this TestFixture testFixture, PostScopeAsyncExt<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18> action)
             => testFixture.PostScopeAsync(async options =>
             {
                 var arg1 = ScopeArgLocator<TArg1>.Get(options);
@@ -408,10 +408,10 @@ namespace TestScope
 
                 await options.NextAsync();
 
-                await postScope.Invoke(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, arg18);
+                await action.Invoke(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, arg18);
             });
 
-        public static TestFixture PostScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19>(this TestFixture testFixture, PostScopeAsyncExt<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19> postScope)
+        public static TestFixture PostScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19>(this TestFixture testFixture, PostScopeAsyncExt<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19> action)
             => testFixture.PostScopeAsync(async options =>
             {
                 var arg1 = ScopeArgLocator<TArg1>.Get(options);
@@ -436,10 +436,10 @@ namespace TestScope
 
                 await options.NextAsync();
 
-                await postScope.Invoke(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, arg18, arg19);
+                await action.Invoke(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, arg18, arg19);
             });
 
-        public static TestFixture PostScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20>(this TestFixture testFixture, PostScopeAsyncExt<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20> postScope)
+        public static TestFixture PostScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20>(this TestFixture testFixture, PostScopeAsyncExt<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20> action)
             => testFixture.PostScopeAsync(async options =>
             {
                 var arg1 = ScopeArgLocator<TArg1>.Get(options);
@@ -465,10 +465,10 @@ namespace TestScope
 
                 await options.NextAsync();
 
-                await postScope.Invoke(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, arg18, arg19, arg20);
+                await action.Invoke(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, arg18, arg19, arg20);
             });
 
-        public static TestFixture PostScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21>(this TestFixture testFixture, PostScopeAsyncExt<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21> postScope)
+        public static TestFixture PostScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21>(this TestFixture testFixture, PostScopeAsyncExt<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21> action)
             => testFixture.PostScopeAsync(async options =>
             {
                 var arg1 = ScopeArgLocator<TArg1>.Get(options);
@@ -495,10 +495,10 @@ namespace TestScope
 
                 await options.NextAsync();
 
-                await postScope.Invoke(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, arg18, arg19, arg20, arg21);
+                await action.Invoke(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, arg18, arg19, arg20, arg21);
             });
 
-        public static TestFixture PostScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22>(this TestFixture testFixture, PostScopeAsyncExt<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22> postScope)
+        public static TestFixture PostScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22>(this TestFixture testFixture, PostScopeAsyncExt<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22> action)
             => testFixture.PostScopeAsync(async options =>
             {
                 var arg1 = ScopeArgLocator<TArg1>.Get(options);
@@ -526,10 +526,10 @@ namespace TestScope
 
                 await options.NextAsync();
 
-                await postScope.Invoke(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, arg18, arg19, arg20, arg21, arg22);
+                await action.Invoke(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, arg18, arg19, arg20, arg21, arg22);
             });
 
-        public static TestFixture PostScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23>(this TestFixture testFixture, PostScopeAsyncExt<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23> postScope)
+        public static TestFixture PostScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23>(this TestFixture testFixture, PostScopeAsyncExt<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23> action)
             => testFixture.PostScopeAsync(async options =>
             {
                 var arg1 = ScopeArgLocator<TArg1>.Get(options);
@@ -558,10 +558,10 @@ namespace TestScope
 
                 await options.NextAsync();
 
-                await postScope.Invoke(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, arg18, arg19, arg20, arg21, arg22, arg23);
+                await action.Invoke(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, arg18, arg19, arg20, arg21, arg22, arg23);
             });
 
-        public static TestFixture PostScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24>(this TestFixture testFixture, PostScopeAsyncExt<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24> postScope)
+        public static TestFixture PostScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24>(this TestFixture testFixture, PostScopeAsyncExt<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24> action)
             => testFixture.PostScopeAsync(async options =>
             {
                 var arg1 = ScopeArgLocator<TArg1>.Get(options);
@@ -591,10 +591,10 @@ namespace TestScope
 
                 await options.NextAsync();
 
-                await postScope.Invoke(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, arg18, arg19, arg20, arg21, arg22, arg23, arg24);
+                await action.Invoke(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, arg18, arg19, arg20, arg21, arg22, arg23, arg24);
             });
 
-        public static TestFixture PostScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25>(this TestFixture testFixture, PostScopeAsyncExt<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25> postScope)
+        public static TestFixture PostScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25>(this TestFixture testFixture, PostScopeAsyncExt<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25> action)
             => testFixture.PostScopeAsync(async options =>
             {
                 var arg1 = ScopeArgLocator<TArg1>.Get(options);
@@ -625,10 +625,10 @@ namespace TestScope
 
                 await options.NextAsync();
 
-                await postScope.Invoke(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, arg18, arg19, arg20, arg21, arg22, arg23, arg24, arg25);
+                await action.Invoke(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, arg18, arg19, arg20, arg21, arg22, arg23, arg24, arg25);
             });
 
-        public static TestFixture PostScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25, TArg26>(this TestFixture testFixture, PostScopeAsyncExt<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25, TArg26> postScope)
+        public static TestFixture PostScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25, TArg26>(this TestFixture testFixture, PostScopeAsyncExt<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25, TArg26> action)
             => testFixture.PostScopeAsync(async options =>
             {
                 var arg1 = ScopeArgLocator<TArg1>.Get(options);
@@ -660,10 +660,10 @@ namespace TestScope
 
                 await options.NextAsync();
 
-                await postScope.Invoke(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, arg18, arg19, arg20, arg21, arg22, arg23, arg24, arg25, arg26);
+                await action.Invoke(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, arg18, arg19, arg20, arg21, arg22, arg23, arg24, arg25, arg26);
             });
 
-        public static TestFixture PostScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25, TArg26, TArg27>(this TestFixture testFixture, PostScopeAsyncExt<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25, TArg26, TArg27> postScope)
+        public static TestFixture PostScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25, TArg26, TArg27>(this TestFixture testFixture, PostScopeAsyncExt<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25, TArg26, TArg27> action)
             => testFixture.PostScopeAsync(async options =>
             {
                 var arg1 = ScopeArgLocator<TArg1>.Get(options);
@@ -696,10 +696,10 @@ namespace TestScope
 
                 await options.NextAsync();
 
-                await postScope.Invoke(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, arg18, arg19, arg20, arg21, arg22, arg23, arg24, arg25, arg26, arg27);
+                await action.Invoke(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, arg18, arg19, arg20, arg21, arg22, arg23, arg24, arg25, arg26, arg27);
             });
 
-        public static TestFixture PostScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25, TArg26, TArg27, TArg28>(this TestFixture testFixture, PostScopeAsyncExt<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25, TArg26, TArg27, TArg28> postScope)
+        public static TestFixture PostScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25, TArg26, TArg27, TArg28>(this TestFixture testFixture, PostScopeAsyncExt<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25, TArg26, TArg27, TArg28> action)
             => testFixture.PostScopeAsync(async options =>
             {
                 var arg1 = ScopeArgLocator<TArg1>.Get(options);
@@ -733,10 +733,10 @@ namespace TestScope
 
                 await options.NextAsync();
 
-                await postScope.Invoke(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, arg18, arg19, arg20, arg21, arg22, arg23, arg24, arg25, arg26, arg27, arg28);
+                await action.Invoke(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, arg18, arg19, arg20, arg21, arg22, arg23, arg24, arg25, arg26, arg27, arg28);
             });
 
-        public static TestFixture PostScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25, TArg26, TArg27, TArg28, TArg29>(this TestFixture testFixture, PostScopeAsyncExt<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25, TArg26, TArg27, TArg28, TArg29> postScope)
+        public static TestFixture PostScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25, TArg26, TArg27, TArg28, TArg29>(this TestFixture testFixture, PostScopeAsyncExt<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25, TArg26, TArg27, TArg28, TArg29> action)
             => testFixture.PostScopeAsync(async options =>
             {
                 var arg1 = ScopeArgLocator<TArg1>.Get(options);
@@ -771,10 +771,10 @@ namespace TestScope
 
                 await options.NextAsync();
 
-                await postScope.Invoke(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, arg18, arg19, arg20, arg21, arg22, arg23, arg24, arg25, arg26, arg27, arg28, arg29);
+                await action.Invoke(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, arg18, arg19, arg20, arg21, arg22, arg23, arg24, arg25, arg26, arg27, arg28, arg29);
             });
 
-        public static TestFixture PostScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25, TArg26, TArg27, TArg28, TArg29, TArg30>(this TestFixture testFixture, PostScopeAsyncExt<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25, TArg26, TArg27, TArg28, TArg29, TArg30> postScope)
+        public static TestFixture PostScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25, TArg26, TArg27, TArg28, TArg29, TArg30>(this TestFixture testFixture, PostScopeAsyncExt<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25, TArg26, TArg27, TArg28, TArg29, TArg30> action)
             => testFixture.PostScopeAsync(async options =>
             {
                 var arg1 = ScopeArgLocator<TArg1>.Get(options);
@@ -810,10 +810,10 @@ namespace TestScope
 
                 await options.NextAsync();
 
-                await postScope.Invoke(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, arg18, arg19, arg20, arg21, arg22, arg23, arg24, arg25, arg26, arg27, arg28, arg29, arg30);
+                await action.Invoke(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, arg18, arg19, arg20, arg21, arg22, arg23, arg24, arg25, arg26, arg27, arg28, arg29, arg30);
             });
 
-        public static TestFixture PostScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25, TArg26, TArg27, TArg28, TArg29, TArg30, TArg31>(this TestFixture testFixture, PostScopeAsyncExt<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25, TArg26, TArg27, TArg28, TArg29, TArg30, TArg31> postScope)
+        public static TestFixture PostScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25, TArg26, TArg27, TArg28, TArg29, TArg30, TArg31>(this TestFixture testFixture, PostScopeAsyncExt<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25, TArg26, TArg27, TArg28, TArg29, TArg30, TArg31> action)
             => testFixture.PostScopeAsync(async options =>
             {
                 var arg1 = ScopeArgLocator<TArg1>.Get(options);
@@ -850,10 +850,10 @@ namespace TestScope
 
                 await options.NextAsync();
 
-                await postScope.Invoke(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, arg18, arg19, arg20, arg21, arg22, arg23, arg24, arg25, arg26, arg27, arg28, arg29, arg30, arg31);
+                await action.Invoke(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, arg18, arg19, arg20, arg21, arg22, arg23, arg24, arg25, arg26, arg27, arg28, arg29, arg30, arg31);
             });
 
-        public static TestFixture PostScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25, TArg26, TArg27, TArg28, TArg29, TArg30, TArg31, TArg32>(this TestFixture testFixture, PostScopeAsyncExt<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25, TArg26, TArg27, TArg28, TArg29, TArg30, TArg31, TArg32> postScope)
+        public static TestFixture PostScopeAsync<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25, TArg26, TArg27, TArg28, TArg29, TArg30, TArg31, TArg32>(this TestFixture testFixture, PostScopeAsyncExt<TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9, TArg10, TArg11, TArg12, TArg13, TArg14, TArg15, TArg16, TArg17, TArg18, TArg19, TArg20, TArg21, TArg22, TArg23, TArg24, TArg25, TArg26, TArg27, TArg28, TArg29, TArg30, TArg31, TArg32> action)
             => testFixture.PostScopeAsync(async options =>
             {
                 var arg1 = ScopeArgLocator<TArg1>.Get(options);
@@ -891,7 +891,7 @@ namespace TestScope
 
                 await options.NextAsync();
 
-                await postScope.Invoke(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, arg18, arg19, arg20, arg21, arg22, arg23, arg24, arg25, arg26, arg27, arg28, arg29, arg30, arg31, arg32);
+                await action.Invoke(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, arg18, arg19, arg20, arg21, arg22, arg23, arg24, arg25, arg26, arg27, arg28, arg29, arg30, arg31, arg32);
             });
 
     }
