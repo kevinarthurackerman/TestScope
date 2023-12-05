@@ -10,13 +10,13 @@
             => testFixture.OnRunAsync((context) =>
             {
                 preRun.Invoke(context);
-                return context.Next();
+                return context.NextAsync();
             });
 
         public static TestFixture PostRun(this TestFixture testFixture, PostRun postRun)
             => testFixture.OnRunAsync(async (context) =>
             {
-                await context.Next();
+                await context.NextAsync();
                 postRun.Invoke(context);
             });
     }

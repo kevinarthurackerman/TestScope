@@ -10,13 +10,13 @@
             => testFixture.OnConfigureAsync((context) =>
             {
                 preConfigure.Invoke(context);
-                return context.Next();
+                return context.NextAsync();
             });
 
         public static TestFixture PostConfigure(this TestFixture testFixture, PostConfigure postConfigure)
             => testFixture.OnConfigureAsync(async (context) =>
             {
-                await context.Next();
+                await context.NextAsync();
                 postConfigure.Invoke(context);
             });
     }

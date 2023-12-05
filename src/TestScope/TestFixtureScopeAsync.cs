@@ -14,13 +14,13 @@ namespace TestScope
             => testFixture.OnScopeAsync(async (context) =>
             {
                 await preScope.Invoke(context);
-                await context.Next();
+                await context.NextAsync();
             });
 
         public static TestFixture PostScopeAsync(this TestFixture testFixture, PostScopeAsync postScope)
             => testFixture.OnScopeAsync(async (context) =>
             {
-                await context.Next();
+                await context.NextAsync();
                 await postScope.Invoke(context);
             });
     }

@@ -15,13 +15,13 @@ namespace TestScope
             => testFixture.OnConfigureAsync(async (context) =>
             {
                 await preConfigure.Invoke(context);
-                await context.Next();
+                await context.NextAsync();
             });
 
         public static TestFixture PostConfigureAsync(this TestFixture testFixture, PostConfigureAsync postConfigure)
             => testFixture.OnConfigureAsync(async (context) =>
             {
-                await context.Next();
+                await context.NextAsync();
                 await postConfigure.Invoke(context);
             });
     }

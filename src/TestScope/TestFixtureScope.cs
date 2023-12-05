@@ -9,20 +9,20 @@ namespace TestScope
             IServiceProvider rootServiceProvider,
             IServiceProvider scopeServiceProvider,
             dynamic context,
-            NextAsync next,
+            NextAsync nextAsync,
             CancellationToken cancellationToken)
         {
             RootServiceProvider = rootServiceProvider;
             ScopeServiceProvider = scopeServiceProvider;
             Context = context;
-            Next = next;
+            NextAsync = nextAsync;
             CancellationToken = cancellationToken;
         }
 
         public IServiceProvider RootServiceProvider { get; }
         public IServiceProvider ScopeServiceProvider { get; }
         public dynamic Context { get; }
-        public NextAsync Next { get; }
+        public NextAsync NextAsync { get; }
         public CancellationToken CancellationToken { get; }
     }
 }

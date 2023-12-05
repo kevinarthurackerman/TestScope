@@ -8,18 +8,18 @@ namespace TestScope
         internal RunOptions(
             IServiceProvider rootServiceProvider,
             dynamic context,
-            NextAsync next,
+            NextAsync nextAsync,
             CancellationToken cancellationToken)
         {
             RootServiceProvider = rootServiceProvider;
             Context = context;
-            Next = next;
+            NextAsync = nextAsync;
             CancellationToken = cancellationToken;
         }
 
         public IServiceProvider RootServiceProvider { get; }
         public dynamic Context { get; }
-        public NextAsync Next { get; }
+        public NextAsync NextAsync { get; }
         public CancellationToken CancellationToken { get; }
     }
 }

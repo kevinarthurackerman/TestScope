@@ -10,13 +10,13 @@
             => testFixture.OnScopeAsync((context) =>
             {
                 preScope.Invoke(context);
-                return context.Next();
+                return context.NextAsync();
             });
 
         public static TestFixture PostScope(this TestFixture testFixture, PostScope postScope)
             => testFixture.OnScopeAsync(async (context) =>
             {
-                await context.Next();
+                await context.NextAsync();
                 postScope.Invoke(context);
             });
     }
